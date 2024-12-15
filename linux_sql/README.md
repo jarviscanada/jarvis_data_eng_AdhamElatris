@@ -27,7 +27,7 @@ crontab -e
 # Add the following entry to collect data every minute
 * * * * * bash /path/to/scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password >  /tmp/host_usage.log
 # You can find it in the crontab job list
-contab -l
+crontab -l
 ```
 
 # Implementation
