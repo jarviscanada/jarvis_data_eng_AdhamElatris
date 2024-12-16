@@ -99,22 +99,22 @@ SELECT * FROM host_usage WHERE cpu_usage < 20;
 
 | Column            | Data Type               | Nullable | Default                                     | Explanation |
 |-------------------|-------------------------|----------|---------------------------------------------|-------------|
-| `id`              | integer                 | not null | Auto-incrementing  | A unique identifier for each host. This is the primary key of the table and is automatically generated. |
-| `hostname`        | character varying       | not null |                                             | The name of the host. It must be a unique string. |
+| `id`              | SERIAL                  | not null | Auto-incrementing                           | A unique identifier for each host. This is the primary key of the table and is automatically generated. |
+| `hostname`        | VARCHAR                 | not null |                                             | The name of the host. It must be a unique string. |
 | `cpu_number`      | smallint                | not null |                                             | The number of CPU cores on the host. This gives an idea of the host's processing power. |
-| `cpu_architecture`| character varying       | not null |                                             | The architecture of the CPU. It helps to identify the type of processor. |
-| `cpu_model`       | character varying       | not null |                                             | The model of the CPU. This gives more detailed information about the processor. |
-| `cpu_mhz`         | double precision        | not null |                                             | The clock speed of the CPU in MHz, providing an indication of how fast the CPU operates. |
+| `cpu_architecture`| VARCHAR                 | not null |                                             | The architecture of the CPU. It helps to identify the type of processor. |
+| `cpu_model`       | VARCHAR                 | not null |                                             | The model of the CPU. This gives more detailed information about the processor. |
+| `cpu_mhz`         | FLOATS                  | not null |                                             | The clock speed of the CPU in MHz, providing an indication of how fast the CPU operates. |
 | `l2_cache`        | integer                 | not null |                                             | The size of the L2 cache. L2 cache is a type of memory used by the CPU to speed up access to frequently used data. |
-| `timestamp`       | timestamp without time zone | optional |                                             | The timestamp when the host information was recorded. This allows for tracking of when the information was updated. |
+| `timestamp`       | timestamp               | optional |                                             | The timestamp when the host information was recorded. This allows for tracking of when the information was updated. |
 | `total_mem`       | integer                 | optional |                                             | The total amount of memory available on the host, typically in kilobytes. |
 
 ### `host_usage` Table Schema
 
 | Column            | Data Type               | Nullable | Default | Explanation |
 |-------------------|-------------------------|----------|---------|-------------|
-| `timestamp`       | timestamp without time zone | not null |         | The timestamp when the host usage data was recorded. This helps in tracking the state of the system at a specific time. |
-| `host_id`         | integer                 | not null |         | A foreign key that references the `id` of the `host_info` table. This ties the usage data to a specific host. |
+| `timestamp`       | timestamp               | not null |         | The timestamp when the host usage data was recorded. This helps in tracking the state of the system at a specific time. |
+| `host_id`         | SERIAL                  | not null |         | A foreign key that references the `id` of the `host_info` table. This ties the usage data to a specific host. |
 | `memory_free`     | integer                 | not null |         | The amount of free memory on the host. It indicates how much of the total memory is not in use. |
 | `cpu_idle`        | smallint                | not null |         | The percentage of CPU time that is idle. It indicates how much unused CPU capacity the system has at the moment. |
 | `cpu_kernel`      | smallint                | not null |         | The percentage of CPU time spent on kernel tasks. It helps to understand how much of the CPU is occupied by system-level operations. |
