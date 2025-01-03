@@ -1,62 +1,53 @@
-#!/bin/sh
+h#!/bin/sh
 
 # Capture CLI arguments
 cmd=$1
 db_username=$2
 db_password=$3
-echo $cmd
-# Start docker service if not running
-# Check if docker is running, if not, start it
 
+# Start docker
+# Make sure you understand the double pipe operator
+sudo systemctl status docker || systemctl start docker
 
-#This code is commented because it was causing issues (we viewed it together in a meeting)
-#sudo systemctl status docker || systemctl start docker
-
-# Check container status
-echo "test"
+# Check container status (try the following cmds on terminal)
 docker container inspect jrvs-psql
-echo "after"
 container_status=$?
 
-# User switch case to handle create|stop|start options
-case $cmd in 
+# User switch case to handle create|stop|start opetions
+case $cmd in
   create)
-  
+
   # Check if the container is already created
   if [ $container_status -eq 0 ]; then
-    echo 'Container already exists'
-    exit 1	
-  fi
+        echo 'Container already exists'
+        exit 1
+    fi
 
   # Check # of CLI arguments
   if [ $# -ne 3 ]; then
     echo 'Create requires username and password'
     exit 1
   fi
-  
-  # Create container
-  docker volume create pgdata
-  
-  # Start the container
-  docker run --name jrvs-psql -e POSTGRES_PASSWORD=$db_password -e POSTGRES_USER=$db_username -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
-  
-  # Make sure you understand what's `$?`
-  exit $?
-  ;;
 
-  start|stop) 
+  # Create container
+    docker volume create jrvs-psql-data
+  # Start the container
+    docker run -d --name jrvs-psql -e POSTGRES_USER=$db_username -e POSTGRES_PASSWORD=$db_password -v jrvs-psql-data:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
+  # Make sure you understand what's $?
+    exit $?
+    ;;
+
+  start|stop)
   # Check instance status; exit 1 if container has not been created
   if [ $container_status -ne 0 ]; then
-    echo "Container does not exist. Please create it first."
+    echo 'Container has not been created'
     exit 1
   fi
 
   # Start or stop the container
-  echo $cmd
-  docker container $cmd jrvs-psql
-
-  exit $?
-  ;;	
+    docker container $cmd jrvs-psql
+    exit $?
+    ;;
 
   *)
     echo 'Illegal command'
