@@ -1,15 +1,20 @@
 # Table Setup (DDL)
 
-### -- Question 1:  Insert some data into a table 
+## -- Question 1:  Insert some data into a table 
     insert into cd.facilities (
     facid, name, membercost, guestcost, 
     initialoutlay, monthlymaintenance
     ) 
     values 
     (9, 'Spa', 20, 30, 100000, 800);
+### Documentation:
+This simple SQL query inserts a new record into the cd.facilities table using the INSERT INTO statement. 
+The column names are specified explicitly to ensure the values are assigned correctly. 
+The corresponding values are provided in the same order as the column names, respecting 
+the data structure of the table.
 
 
-### -- Question 2:   Insert calculated data into a table 
+## -- Question 2:   Insert calculated data into a table 
     INSERT INTO cd.facilities (
     facid, name, membercost, guestcost, 
     initialoutlay, monthlymaintenance
@@ -23,18 +28,27 @@
     800 
     FROM 
     cd.facilities;
+### Documentation:
+This SQL query inserts data into the cd.facilities table using the INSERT INTO statement. 
+Compared to the previous question, we did not assign a fixed value to the facid column. 
+This time, we use a SELECT statement to get the last facid in our table and add 1 to it, which ensures 
+automatic generation of the facid. This approach can be seen as similar to using an AUTO_INCREMENT 
+for the facid column.
 
 
-### -- Question 3:    Update some existing data 
+## -- Question 3:    Update some existing data 
     UPDATE 
     cd.facilities 
     SET 
     initialoutlay = 10000 
     WHERE 
     facid = 1;
+### Documentation:
+This SQL query modifies existing data in the cd.facilities table using the UPDATE statement. 
+It updates the initialoutlay column to 10000 (specified in the SET statement) for the row where 
+the facid is equal to 1 (specified in the WHERE statement).
 
-
-### -- Question 4:    Update a row based on the contents of another row 
+## -- Question 4:    Update a row based on the contents of another row 
     UPDATE 
     cd.facilities 
     SET 
@@ -56,21 +70,30 @@
     ) * 1.1 
     WHERE 
     facid = 1;
+### Documentation:
+This SQL query updates the guestcost and membercost columns in the cd.facilities table for the row where 
+facid is 1, based on the contents of the first row.
 
+- The guestcost is set to 10% more of the value of the first tennis court (facid 0) guestcost.
+- The membercost is set to 10% more to the value of the first tennis court (facid 0) membercost.
 
-### -- Question 5:    Update a row based on the contents of another row 
+The UPDATE statement uses subqueries to get the values from one row and apply them to another.
+
+## -- Question 5:    Update a row based on the contents of another row 
     DELETE from 
     cd.bookings;
+### Documentation:
+This SQL query deletes everything in the cd.bookings table using the DELETE statement.
 
-
-### -- Question 6:    Delete a member from the cd.members table
+## -- Question 6:    Delete a member from the cd.members table
     DELETE from 
     cd.members 
     WHERE 
     memid = 37;
+### Documentation:
+This SQL query deletes a row from the cd.members table where the memid is equal to 37.
 
-
-### -- Question 7:    Control which rows are retrieved - part 2 
+## -- Question 7:    Control which rows are retrieved - part 2 
     SELECT 
     facid, 
     name, 
@@ -83,27 +106,40 @@
     AND (
         membercost < monthlymaintenance / 50.0
     );
+### Documentation:
+This SQL query retrieves the facid, name, membercost, and monthlymaintenance columns from 
+the cd.facilities table. The query filters the rows based on two conditions:
+
+- The membercost must be greater than 0.
+- The membercost must be less than 1/50th of the monthlymaintenance.
+
+Only rows that meet both conditions will be returned.
 
 
-### -- Question 8:    Basic string searches  
+## -- Question 8:    Basic string searches  
     SELECT 
     * 
     FROM 
     cd.facilities 
     WHERE 
     name like '%Tennis%';
+### Documentation:
+This SQL query retrieves all records from the cd.facilities table where the name column contains the word 
+"Tennis." The LIKE operator is used with the % symbol to match any values that have "Tennis" anywhere 
+in the name column.
 
-
-### -- Question 9:    Matching against multiple possible values   
+## -- Question 9:    Matching against multiple possible values   
     SELECT 
     * 
     from 
     cd.facilities 
     WHERE 
     facid IN (1, 5);
+### Documentation:
+This SQL query retrieves all records from the cd.facilities table where the facid column 
+matches either 1 or 5. The IN operator is used to specify multiple possible values for facid.
 
-
-### -- Question 10:   Working with dates    
+## -- Question 10:   Working with dates    
     SELECT 
     memid, 
     surname, 
@@ -113,9 +149,11 @@
     cd.members 
     WHERE 
     joindate > '2012-09-01';
+### Documentation:
+This SQL query retrieves the memid, surname, firstname and joindate columns from the cd.members table. 
+It filters the records to include only those where the joindate is later than September 1, 2012.
 
-
-### -- Question 11:   Combining results from multiple queries    
+## -- Question 11:   Combining results from multiple queries    
     SELECT 
     surname 
     FROM 
@@ -125,10 +163,13 @@
     name 
     from 
     cd.facilities;
+### Documentation:
+This SQL query retrieves the surname from the cd.members table and the name from the cd.facilities table. 
+The UNION operator combines the results of the two SELECT statements into a single result set, 
+removing any duplicate values.
 
 
-
-### -- Question 12:   Retrieve the start times of members' bookings   
+## -- Question 12:   Retrieve the start times of members' bookings   
     SELECT 
     starttime 
     FROM 
@@ -137,10 +178,11 @@
     WHERE 
     cd.members.firstname = 'David' 
     AND cd.members.surname = 'Farrell';
+### Documentation:
 
 
 
-### -- Question 13:    Work out the start times of bookings for tennis courts    
+## -- Question 13:    Work out the start times of bookings for tennis courts    
     SELECT 
     b.starttime, 
     f.name 
@@ -152,10 +194,11 @@
     AND b.starttime :: date = '2012-09-21' 
     ORDER BY 
     b.starttime;
+### Documentation:
 
 
 
-### -- Question 14:    Produce a list of all members, along with their recommender     
+## -- Question 14:    Produce a list of all members, along with their recommender     
     SELECT 
     members.firstname, 
     members.surname, 
@@ -167,10 +210,11 @@
     ORDER BY 
     members.surname, 
     members.firstname;
+### Documentation:
 
 
 
-### -- Question 15:    Produce a list of all members who have recommended another member    
+## -- Question 15:    Produce a list of all members who have recommended another member    
     SELECT 
     DISTINCT members.firstname, 
     members.surname 
@@ -180,10 +224,11 @@
     ORDER BY 
     members.surname, 
     members.firstname;
+### Documentation:
 
 
 
-### -- Question 16:    Produce a list of all members, along with their recommender, using no joins.     
+## -- Question 16:    Produce a list of all members, along with their recommender, using no joins.     
     select 
     distinct mems.firstname || ' ' || mems.surname as member, 
     (
@@ -198,6 +243,7 @@
     cd.members mems 
     order by 
     member;
+### Documentation:
 
 
 
