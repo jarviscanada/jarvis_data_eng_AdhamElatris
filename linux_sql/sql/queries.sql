@@ -57,12 +57,12 @@ WHERE
 
 
 -- Question 5:    Update a row based on the contents of another row 
-DELETE from 
+DELETE FROM 
   cd.bookings;
 
 
--- Question 6:    Delete a member from the cd.members table
-DELETE from 
+-- Question 6:    Delete a member FROM the cd.members table
+DELETE FROM 
   cd.members 
 WHERE 
   memid = 37;
@@ -95,7 +95,7 @@ WHERE
 -- Question 9:    Matching against multiple possible values   
 SELECT 
   * 
-from 
+FROM 
   cd.facilities 
 WHERE 
   facid IN (1, 5);
@@ -107,21 +107,21 @@ SELECT
   surname, 
   firstname, 
   joindate 
-from 
+FROM 
   cd.members 
 WHERE 
   joindate > '2012-09-01';
 
 
--- Question 11:   Combining results from multiple queries    
+-- Question 11:   Combining results FROM multiple queries    
 SELECT 
   surname 
 FROM 
   cd.members 
 UNION 
-select 
+SELECT 
   name 
-from 
+FROM 
   cd.facilities;
 
 
@@ -182,20 +182,173 @@ ORDER BY
 
 
 -- Question 16:    Produce a list of all members, along with their recommender, using no joins.     
-select 
+SELECT 
   distinct mems.firstname || ' ' || mems.surname as member, 
   (
-    select 
+    SELECT 
       recs.firstname || ' ' || recs.surname as recommender 
-    from 
+    FROM 
       cd.members recs 
-    where 
+    WHERE 
       recs.memid = mems.recommendedby
   ) 
-from 
+FROM 
   cd.members mems 
 order by 
   member;
+
+
+
+-- Question 17:    Count the number of recommendations each member makes.     
+SELECT 
+recommendedby, 
+count(*) 
+FROM 
+  cd.members 
+WHERE 
+  recommendedby is not null 
+group by 
+  recommendedby 
+order by 
+  recommendedby;
+
+
+
+-- Question 18:    List the total slots booked per facility      
+SELECT 
+  facid, 
+  sum(slots) 
+FROM 
+  cd.bookings 
+group by 
+  facid 
+order by 
+  facid;
+
+
+
+-- Question 19:    List the total slots booked per facility in a given month       
+SELECT 
+  facid, 
+  sum(slots) 
+FROM 
+  cd.bookings 
+WHERE 
+  starttime :: date >= '2012-09-1' 
+  and starttime :: date < '2012-10-1' 
+group by 
+  facid 
+order by 
+  sum(slots); 
+
+
+
+-- Question 20:    List the total slots booked per facility per month        
+SELECT 
+  facid, 
+  extract(
+    month 
+    FROM 
+      starttime
+  ), 
+  sum(slots) 
+FROM 
+  cd.bookings 
+WHERE 
+  extract(
+    year 
+    FROM 
+      starttime
+  ) = 2012 
+group by 
+  facid, 
+  extract(
+    month 
+    FROM 
+      starttime
+  ) 
+order by 
+  facid, 
+  extract(
+    month 
+    FROM 
+      starttime
+  );
+
+
+
+-- Question 21:    Find the count of members who have made at least one booking        
+SELECT 
+  count(distinct memid) 
+FROM 
+  cd.bookings;
+
+
+
+-- Question 22:    List each member's first booking after September 1st 2012        
+SELECT 
+  members.surname, 
+  members.firstname, 
+  members.memid, 
+  MIN(bookings.starttime) 
+FROM 
+  cd.bookings bookings 
+  INNER JOIN cd.members members ON members.memid = bookings.memid 
+WHERE 
+  bookings.starttime :: date >= '2012-09-01' 
+GROUP BY 
+  members.memid 
+ORDER BY 
+  members.memid;
+
+
+
+-- Question 23:   Produce a list of member names, with each row containing the total member count        
+SELECT 
+  COUNT(members.memid) OVER (), 
+  members.firstname, 
+  members.surname 
+FROM 
+  cd.members members 
+ORDER BY 
+  members.joindate;
+
+
+
+-- Question 24:    Produce a numbered list of members  
+SELECT 
+  count(*) over(
+    ORDER BY 
+      joindate
+  ) AS row_number, 
+  firstname, 
+  surname 
+FROM 
+  cd.members;
+
+
+
+-- Question 25:   Output the facility id that has the highest number of slots booked, again  
+SELECT 
+  facid, 
+  total 
+FROM 
+  (
+    SELECT 
+      facid, 
+      sum(slots) total, 
+      rank() over (
+        order by 
+          sum(slots) desc
+      ) rank 
+    FROM 
+      cd.bookings 
+    group by 
+      facid
+  ) as ranked 
+WHERE 
+  rank = 1
+
 
 
 
