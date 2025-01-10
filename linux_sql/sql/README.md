@@ -7,7 +7,7 @@
     ) 
     values 
     (9, 'Spa', 20, 30, 100000, 800);
-### Documentation:
+## Documentation:
 This simple SQL query inserts a new record into the cd.facilities table using the INSERT INTO statement. 
 The column names are specified explicitly to ensure the values are assigned correctly. 
 The corresponding values are provided in the same order as the column names, respecting 
@@ -179,7 +179,7 @@ removing any duplicate values.
     cd.members.firstname = 'David' 
     AND cd.members.surname = 'Farrell';
 ### Documentation:
-
+This SQL query retrieves the starttime column from the cd.bookings table for bookings made by a member named "David Farrell." An INNER JOIN is used to combine data from the cd.members table (for the member's first name and surname) and the cd.bookings table (to retrieve the corresponding start time).
 
 
 ## -- Question 13:    Work out the start times of bookings for tennis courts    
@@ -195,6 +195,7 @@ removing any duplicate values.
     ORDER BY 
     b.starttime;
 ### Documentation:
+This SQL query retrieves the starttime from the cd.bookings table and the name from the cd.facilities table for Tennis Courts, where the booking was made on September 21, 2012. An INNER JOIN is used to combine data from both tables. The results are sorted by starttime using the ORDER BY statement.
 
 
 
@@ -211,7 +212,7 @@ removing any duplicate values.
     members.surname, 
     members.firstname;
 ### Documentation:
-
+This SQL query generates a list of all members along with the names of their recommenders. The query uses a LEFT JOIN to include all members from the cd.members table, even if they do not have a recommender. The ON condition matches each member's recommendedby value with the memid of the recommender in the same table. The result is sorted alphabetically by the members' surname and firstname.
 
 
 ## -- Question 15:    Produce a list of all members who have recommended another member    
@@ -225,7 +226,7 @@ removing any duplicate values.
     members.surname, 
     members.firstname;
 ### Documentation:
-
+This SQL query retrieves a distinct list of members who have recommended at least one other member. An INNER JOIN is used to find matches where a member's memid appears as a recommendedby value for another member in the same table. The DISTINCT keyword ensures that each member is listed only once. The results are ordered alphabetically by the members' surname and firstname.
 
 
 ## -- Question 16:    Produce a list of all members, along with their recommender, using no joins.     
@@ -244,6 +245,6 @@ removing any duplicate values.
     order by 
     member;
 ### Documentation:
-
+This SQL query produces a list of all members along with their recommenders without using joins. It uses a subquery within the SELECT statement to retrieve the recommender's name by matching the member's recommendedby value to the memid in the same table. The DISTINCT keyword ensures unique results, and the concatenation (||) combines the first name and surname for display. The list is sorted alphabetically by the member's full name using the ORDER BY clause.
 
 
