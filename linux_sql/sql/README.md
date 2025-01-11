@@ -288,152 +288,152 @@ This SQL query counts the number of recommendations each member makes. It retrie
 
 
 ## -- Question 18:    List the total slots booked per facility      
-SELECT 
-  facid, 
-  sum(slots) 
-FROM 
-  cd.bookings 
-group by 
-  facid 
-order by 
-  facid;
+    SELECT 
+      facid, 
+      sum(slots) 
+    FROM 
+      cd.bookings 
+    group by 
+      facid 
+    order by 
+      facid;
 ### Documentation:
 This SQL query lists the total number of slots booked for each facility. It retrieves the facid and sums up the slots FROM the cd.bookings table. The GROUP BY statement groups the results by facid, calculating the total slots for each facility. The results are sorted by facid using the ORDER BY clause
 
 
 
 ## -- Question 19:    List the total slots booked per facility in a given month       
-SELECT 
-  facid, 
-  sum(slots) 
-FROM 
-  cd.bookings 
-WHERE 
-  starttime :: date >= '2012-09-1' 
-  and starttime :: date < '2012-10-1' 
-group by 
-  facid 
-order by 
-  sum(slots);
+    SELECT 
+      facid, 
+      sum(slots) 
+    FROM 
+      cd.bookings 
+    WHERE 
+      starttime :: date >= '2012-09-1' 
+      and starttime :: date < '2012-10-1' 
+    group by 
+      facid 
+    order by 
+      sum(slots);
 ### Documentation:
 This SQL query lists the total number of slots booked for each facility within a specific month (September 2012). It retrieves the facid and sums the slots FROM the cd.bookings table, filtering the results to include only bookings with a starttime in September 2012. The GROUP BY statement groups the results by facid, and the results are sorted by the total number of slots using the ORDER BY clause.
 
 
 
 ## -- Question 20:    List the total slots booked per facility per month        
-SELECT 
-  facid, 
-  extract(
-    month 
+    SELECT 
+      facid, 
+      extract(
+        month 
+        FROM 
+          starttime
+      ), 
+      sum(slots) 
     FROM 
-      starttime
-  ), 
-  sum(slots) 
-FROM 
-  cd.bookings 
-WHERE 
-  extract(
-    year 
-    FROM 
-      starttime
-  ) = 2012 
-group by 
-  facid, 
-  extract(
-    month 
-    FROM 
-      starttime
-  ) 
-order by 
-  facid, 
-  extract(
-    month 
-    FROM 
-      starttime
-  );
+      cd.bookings 
+    WHERE 
+      extract(
+        year 
+        FROM 
+          starttime
+      ) = 2012 
+    group by 
+      facid, 
+      extract(
+        month 
+        FROM 
+          starttime
+      ) 
+    order by 
+      facid, 
+      extract(
+        month 
+        FROM 
+          starttime
+      );
 ### Documentation:
 This SQL query lists the total number of slots booked for each facility per month in the year 2012. It retrieves the facid, extracts the month FROM the starttime, and sums the slots FROM the cd.bookings table. The WHERE clause filters bookings to only include those FROM the year 2012. The results are grouped by facid and the extracted month using the GROUP BY statement. The results are then sorted by facid and month using the ORDER BY clause.
 
 
 
 ## -- Question 21:    Find the count of members who have made at least one booking        
-SELECT 
-  count(distinct memid) 
-FROM 
-  cd.bookings;
+    SELECT 
+      count(distinct memid) 
+    FROM 
+      cd.bookings;
 ### Documentation:
 This SQL query retrieves the count of distinct members (memid) who have made at least one booking. It SELECTs the distinct memid values FROM the cd.bookings table and counts them using the COUNT(DISTINCT) function. This ensures that each member is counted only once, even if they have made multiple bookings.
 
 
 
 ## -- Question 22:    List each member's first booking after September 1st 2012        
-SELECT 
-  members.surname, 
-  members.firstname, 
-  members.memid, 
-  MIN(bookings.starttime) 
-FROM 
-  cd.bookings bookings 
-  INNER JOIN cd.members members ON members.memid = bookings.memid 
-WHERE 
-  bookings.starttime :: date >= '2012-09-01' 
-GROUP BY 
-  members.memid 
-ORDER BY 
-  members.memid;
+    SELECT 
+      members.surname, 
+      members.firstname, 
+      members.memid, 
+      MIN(bookings.starttime) 
+    FROM 
+      cd.bookings bookings 
+      INNER JOIN cd.members members ON members.memid = bookings.memid 
+    WHERE 
+      bookings.starttime :: date >= '2012-09-01' 
+    GROUP BY 
+      members.memid 
+    ORDER BY 
+      members.memid;
 ### Documentation:
 This SQL query retrieves the surname, firstname, and memid FROM the cd.members table of members who have made at least one booking, along with the earliest booking date FROM the cd.bookings table. It joins the cd.bookings and cd.members tables using an INNER JOIN based on the memid column. The WHERE clause filters the bookings to only include those FROM September 1, 2012 and after. The results are grouped by memid to get the earliest booking date (MIN(starttime)), and the output is sorted by memid using the ORDER BY clause.
 
 
 
 ## -- Question 23:   Produce a list of member names, with each row containing the total member count        
-SELECT 
-  COUNT(members.memid) OVER (), 
-  members.firstname, 
-  members.surname 
-FROM 
-  cd.members members 
-ORDER BY 
-  members.joindate;
+    SELECT 
+      COUNT(members.memid) OVER (), 
+      members.firstname, 
+      members.surname 
+    FROM 
+      cd.members members 
+    ORDER BY 
+      members.joindate;
 ### Documentation:
 This SQL query retrieves a list of member names (firstname and surname) along with the total member count for each row. The COUNT(members.memid) OVER () is used to calculate the total number of members without grouping the results, so each row will contain the same total count. The results are sorted by the members' joindate using the ORDER BY clause.
 
 
 
 ## -- Question 24:    Produce a numbered list of members  
-SELECT 
-  count(*) over(
-    ORDER BY 
-      joindate
-  ) AS row_number, 
-  firstname, 
-  surname 
-FROM 
-  cd.members;
+    SELECT 
+      count(*) over(
+        ORDER BY 
+          joindate
+      ) AS row_number, 
+      firstname, 
+      surname 
+    FROM 
+      cd.members;
 ### Documentation:
 This SQL query produces a numbered list of members, WHERE each member is assigned a row number based on their join date. The COUNT(*) OVER (ORDER BY joindate) function is used to generate a sequential row number for each member, ordered by their join date. The result includes the firstname, surname, and the generated row_number for each member.
 
 
 
 ## -- Question 25:   Output the facility id that has the highest number of slots booked, again  
-SELECT 
-  facid, 
-  total 
-FROM 
-  (
     SELECT 
       facid, 
-      sum(slots) total, 
-      rank() over (
-        order by 
-          sum(slots) desc
-      ) rank 
+      total 
     FROM 
-      cd.bookings 
-    group by 
-      facid
-  ) as ranked 
-WHERE 
-  rank = 1
+      (
+        SELECT 
+          facid, 
+          sum(slots) total, 
+          rank() over (
+            order by 
+              sum(slots) desc
+          ) rank 
+        FROM 
+          cd.bookings 
+        group by 
+          facid
+      ) as ranked 
+    WHERE 
+      rank = 1
 ### Documentation:
 This SQL query retrieves the facility ID (facid) that has the highest number of slots booked. It first calculates the total number of slots booked for each facility using the SUM(slots) function and groups the data by facid. The RANK() OVER (ORDER BY SUM(slots) DESC) function assigns a rank to each facility based on the total number of slots booked, with the highest total receiving rank 1. The outer query then filters the results to only include the facility with rank 1, which corresponds to the facility with the highest number of slots booked.
