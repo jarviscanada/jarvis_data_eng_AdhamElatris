@@ -351,5 +351,40 @@ WHERE
 
 
 
+-- Question 26:   Format the names of members 
+SELECT 
+  surname || ', ' || firstname as name 
+FROM 
+  cd.members;
 
 
+
+-- Question 27:   Find telephone numbers with parentheses  
+/* My first reflexe
+
+SELECT memid, telephone
+FROM cd.members
+WHERE telephone LIKE '%(%' AND telephone LIKE '%)%';
+
+*/
+
+SELECT 
+  memid, 
+  telephone 
+FROM 
+  cd.members 
+WHERE 
+  telephone ~ '[()]';
+
+
+
+-- Question 28:  Count the number of members whose surname starts with each letter of the alphabet  
+SELECT 
+  substr(surname, 1, 1), 
+  count(*) 
+from 
+  cd.members 
+group by 
+  substr(surname, 1, 1) 
+order by 
+  substr(surname, 1, 1);
