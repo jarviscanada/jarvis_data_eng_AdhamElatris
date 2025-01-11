@@ -437,3 +437,49 @@ This SQL query produces a numbered list of members, WHERE each member is assigne
       rank = 1
 ### Documentation:
 This SQL query retrieves the facility ID (facid) that has the highest number of slots booked. It first calculates the total number of slots booked for each facility using the SUM(slots) function and groups the data by facid. The RANK() OVER (ORDER BY SUM(slots) DESC) function assigns a rank to each facility based on the total number of slots booked, with the highest total receiving rank 1. The outer query then filters the results to only include the facility with rank 1, which corresponds to the facility with the highest number of slots booked.
+
+
+
+## -- Question 26:   Format the names of members 
+    SELECT 
+      surname || ', ' || firstname as name 
+    FROM 
+      cd.members;
+### Documentation:
+This SQL query retrieves the full names of members from the cd.members table by combining the surname and firstname columns into a single field labeled as name. The combination is formatted with a comma and space between the surname and firstname using the concatenation operator (||).
+
+
+
+## -- Question 27:   Find telephone numbers with parentheses  
+    /* My first reflexe
+
+    SELECT memid, telephone
+    FROM cd.members
+    WHERE telephone LIKE '%(%' AND telephone LIKE '%)%';
+
+    */
+
+    SELECT 
+      memid, 
+      telephone 
+    FROM 
+      cd.members 
+    WHERE 
+      telephone ~ '[()]';
+### Documentation:
+This SQL query retrieves the memid and telephone columns from the cd.members table. The condition uses the regular expression pattern [()] to match any telephone numbers containing parentheses. The ~ operator checks for these characters within the telephone field. 
+
+
+
+## -- Question 28:  Count the number of members whose surname starts with each letter of the alphabet  
+    SELECT 
+      substr(surname, 1, 1), 
+      count(*) 
+    from 
+      cd.members 
+    group by 
+      substr(surname, 1, 1) 
+    order by 
+      substr(surname, 1, 1);
+### Documentation:
+This SQL query counts the number of members whose surname starts with each letter of the alphabet. It extracts the first letter using the substr() function, groups members by that letter, and counts how many surnames begin with it. The results are then sorted alphabetically by the initial letter.
