@@ -12,7 +12,7 @@ practice different queries and SQL statements.
 
 # Table Setup (DDL)
 
-## -- Question 1:  Insert some data into a table 
+## -- [Question 1](https://pgexercises.com/questions/updates/insert.html):  Insert some data into a table 
     insert into cd.facilities (
     facid, name, membercost, guestcost, 
     initialoutlay, monthlymaintenance
@@ -27,7 +27,7 @@ the data structure of the table.
 
 
 
-## -- Question 2:   Insert calculated data into a table 
+## -- [Question 2](https://pgexercises.com/questions/updates/insert3.html):   Insert calculated data into a table 
     INSERT INTO cd.facilities (
     facid, name, membercost, guestcost, 
     initialoutlay, monthlymaintenance
@@ -50,7 +50,7 @@ for the facid column.
 
 
 
-## -- Question 3:    Update some existing data 
+## -- [Question 3](https://pgexercises.com/questions/updates/update.html):    Update some existing data 
     UPDATE 
     cd.facilities 
     SET 
@@ -64,7 +64,7 @@ the facid is equal to 1 (specified in the WHERE statement).
 
 
 
-## -- Question 4:    Update a row based on the contents of another row 
+## -- [Question 4](https://pgexercises.com/questions/updates/updatecalculated.html):    Update a row based on the contents of another row 
     UPDATE 
     cd.facilities 
     SET 
@@ -97,7 +97,7 @@ The UPDATE statement uses subqueries to get the values FROM one row and apply th
 
 
 
-## -- Question 5:    Update a row based on the contents of another row 
+## -- [Question 5](https://pgexercises.com/questions/updates/delete.html):    Delete all bookings  
     DELETE FROM 
     cd.bookings;
 ### Documentation:
@@ -105,7 +105,7 @@ This SQL query deletes everything in the cd.bookings table using the DELETE stat
 
 
 
-## -- Question 6:    Delete a member FROM the cd.members table
+## -- [Question 6](https://pgexercises.com/questions/updates/deletewh.html):    Delete a member FROM the cd.members table
     DELETE FROM 
     cd.members 
     WHERE 
@@ -115,7 +115,7 @@ This SQL query deletes a row FROM the cd.members table WHERE the memid is equal 
 
 
 
-## -- Question 7:    Control which rows are retrieved - part 2 
+## -- [Question 7](https://pgexercises.com/questions/basic/where2.html):    Control which rows are retrieved - part 2 
     SELECT 
     facid, 
     name, 
@@ -139,7 +139,7 @@ Only rows that meet both conditions will be returned.
 
 
 
-## -- Question 8:    Basic string searches  
+## -- [Question 8](https://pgexercises.com/questions/basic/where3.html):    Basic string searches  
     SELECT 
     * 
     FROM 
@@ -153,7 +153,7 @@ in the name column.
 
 
 
-## -- Question 9:    Matching against multiple possible values   
+## -- [Question 9](https://pgexercises.com/questions/basic/where4.html):    Matching against multiple possible values   
     SELECT 
     * 
     FROM 
@@ -166,7 +166,7 @@ matches either 1 or 5. The IN operator is used to specify multiple possible valu
 
 
 
-## -- Question 10:   Working with dates    
+## -- [Question 10](https://pgexercises.com/questions/basic/date.html):   Working with dates    
     SELECT 
     memid, 
     surname, 
@@ -182,7 +182,7 @@ It filters the records to include only those WHERE the joindate is later than Se
 
 
 
-## -- Question 11:   Combining results FROM multiple queries    
+## -- [Question 11](https://pgexercises.com/questions/basic/union.html):   Combining results FROM multiple queries    
     SELECT 
     surname 
     FROM 
@@ -199,7 +199,7 @@ removing any duplicate values.
 
 
 
-## -- Question 12:   Retrieve the start times of members' bookings   
+## -- [Question 12](https://pgexercises.com/questions/joins/simplejoin.html):   Retrieve the start times of members' bookings   
     SELECT 
     starttime 
     FROM 
@@ -213,7 +213,7 @@ This SQL query retrieves the starttime column FROM the cd.bookings table for boo
 
 
 
-## -- Question 13:    Work out the start times of bookings for tennis courts    
+## -- [Question 13](https://pgexercises.com/questions/joins/simplejoin2.html):    Work out the start times of bookings for tennis courts    
     SELECT 
     b.starttime, 
     f.name 
@@ -230,7 +230,7 @@ This SQL query retrieves the starttime FROM the cd.bookings table and the name F
 
 
 
-## -- Question 14:    Produce a list of all members, along with their recommender     
+## -- [Question 14](https://pgexercises.com/questions/joins/self2.html):    Produce a list of all members, along with their recommender     
     SELECT 
     members.firstname, 
     members.surname, 
@@ -247,7 +247,7 @@ This SQL query generates a list of all members along with the names of their rec
 
 
 
-## -- Question 15:    Produce a list of all members who have recommended another member    
+## -- [Question 15](https://pgexercises.com/questions/joins/self.html):    Produce a list of all members who have recommended another member    
     SELECT 
     DISTINCT members.firstname, 
     members.surname 
@@ -262,7 +262,7 @@ This SQL query retrieves a distinct list of members who have recommended at leas
 
 
 
-## -- Question 16:    Produce a list of all members, along with their recommender, using no joins.     
+## -- [Question 16](https://pgexercises.com/questions/joins/sub.html):    Produce a list of all members, along with their recommender, using no joins.     
     SELECT 
     distinct mems.firstname || ' ' || mems.surname as member, 
     (
@@ -282,7 +282,7 @@ This SQL query produces a list of all members along with their recommenders with
 
 
 
-## -- Question 17:    Count the number of recommendations each member makes.     
+## -- [Question 17](https://pgexercises.com/questions/aggregates/count3.html):    Count the number of recommendations each member makes.     
     SELECT 
     recommendedby, 
     count(*) 
@@ -299,7 +299,7 @@ This SQL query counts the number of recommendations each member makes. It retrie
 
 
 
-## -- Question 18:    List the total slots booked per facility      
+## -- [Question 18](https://pgexercises.com/questions/aggregates/fachours.html):    List the total slots booked per facility      
     SELECT 
       facid, 
       sum(slots) 
@@ -314,7 +314,7 @@ This SQL query lists the total number of slots booked for each facility. It retr
 
 
 
-## -- Question 19:    List the total slots booked per facility in a given month       
+## -- [Question 19](https://pgexercises.com/questions/aggregates/fachoursbymonth.html):    List the total slots booked per facility in a given month       
     SELECT 
       facid, 
       sum(slots) 
@@ -332,7 +332,7 @@ This SQL query lists the total number of slots booked for each facility within a
 
 
 
-## -- Question 20:    List the total slots booked per facility per month        
+## -- [Question 20](https://pgexercises.com/questions/aggregates/fachoursbymonth2.html):    List the total slots booked per facility per month        
     SELECT 
       facid, 
       extract(
@@ -368,7 +368,7 @@ This SQL query lists the total number of slots booked for each facility per mont
 
 
 
-## -- Question 21:    Find the count of members who have made at least one booking        
+## -- [Question 21](https://pgexercises.com/questions/aggregates/members1.html):    Find the count of members who have made at least one booking        
     SELECT 
       count(distinct memid) 
     FROM 
@@ -378,7 +378,7 @@ This SQL query retrieves the count of distinct members (memid) who have made at 
 
 
 
-## -- Question 22:    List each member's first booking after September 1st 2012        
+## -- [Question 22](https://pgexercises.com/questions/aggregates/nbooking.html):    List each member's first booking after September 1st 2012        
     SELECT 
       members.surname, 
       members.firstname, 
@@ -398,7 +398,7 @@ This SQL query retrieves the surname, firstname, and memid FROM the cd.members t
 
 
 
-## -- Question 23:   Produce a list of member names, with each row containing the total member count        
+## -- [Question 23](https://pgexercises.com/questions/aggregates/countmembers.html):   Produce a list of member names, with each row containing the total member count        
     SELECT 
       COUNT(members.memid) OVER (), 
       members.firstname, 
@@ -412,7 +412,7 @@ This SQL query retrieves a list of member names (firstname and surname) along wi
 
 
 
-## -- Question 24:    Produce a numbered list of members  
+## -- [Question 24](https://pgexercises.com/questions/aggregates/nummembers.html):    Produce a numbered list of members  
     SELECT 
       count(*) over(
         ORDER BY 
@@ -427,7 +427,7 @@ This SQL query produces a numbered list of members, WHERE each member is assigne
 
 
 
-## -- Question 25:   Output the facility id that has the highest number of slots booked, again  
+## -- [Question 25](https://pgexercises.com/questions/aggregates/fachours4.html):   Output the facility id that has the highest number of slots booked, again  
     SELECT 
       facid, 
       total 
@@ -452,7 +452,7 @@ This SQL query retrieves the facility ID (facid) that has the highest number of 
 
 
 
-## -- Question 26:   Format the names of members 
+## -- [Question 26](https://pgexercises.com/questions/string/concat.html):   Format the names of members 
     SELECT 
       surname || ', ' || firstname as name 
     FROM 
@@ -462,7 +462,7 @@ This SQL query retrieves the full names of members from the cd.members table by 
 
 
 
-## -- Question 27:   Find telephone numbers with parentheses  
+## -- [Question 27](https://pgexercises.com/questions/string/reg.html):   Find telephone numbers with parentheses  
     /* My first reflexe
 
     SELECT memid, telephone
@@ -483,7 +483,7 @@ This SQL query retrieves the memid and telephone columns from the cd.members tab
 
 
 
-## -- Question 28:  Count the number of members whose surname starts with each letter of the alphabet  
+## -- [Question 28](https://pgexercises.com/questions/string/substr.html):  Count the number of members whose surname starts with each letter of the alphabet  
     SELECT 
       substr(surname, 1, 1), 
       count(*) 
