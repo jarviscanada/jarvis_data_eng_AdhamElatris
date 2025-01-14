@@ -1,3 +1,15 @@
+# Introduction
+This project was designed to deepen SQL knowledge through a series of practical query exercises using 
+a PostgreSQL database in a Docker container. The objective was to explore advanced SQL concepts such 
+as joins, aggregate functions, window functions, and string manipulations by solving around 30 practical
+exercises and 45 theoretical questions.
+
+The project’s implementation and solutions are documented in the README file, which includes a list of 
+all exercises along with their corresponding answers and documentation. The target users are developers 
+who are learning advanced SQL concepts. For the technologies used, I used DBeaver to create the 
+PostgreSQL database and utilized a website called [PostgreSQL Exercises](https://pgexercises.com/) to 
+practice different queries and SQL statements.
+
 # Table Setup (DDL)
 
 ## -- Question 1:  Insert some data into a table 
@@ -7,7 +19,7 @@
     ) 
     values 
     (9, 'Spa', 20, 30, 100000, 800);
-## Documentation:
+### Documentation:
 This simple SQL query inserts a new record into the cd.facilities table using the INSERT INTO statement. 
 The column names are specified explicitly to ensure the values are assigned correctly. 
 The corresponding values are provided in the same order as the column names, respecting 
