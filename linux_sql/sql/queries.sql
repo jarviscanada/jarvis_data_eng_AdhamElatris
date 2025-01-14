@@ -56,7 +56,7 @@ WHERE
   facid = 1;
 
 
--- Question 5:    Update a row based on the contents of another row 
+-- Question 5:    Delete all bookings 
 DELETE FROM 
   cd.bookings;
 
