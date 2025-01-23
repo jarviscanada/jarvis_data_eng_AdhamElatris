@@ -1,0 +1,4 @@
+*.IllegalArgumentException.* occurred in the program
+This is just a test line.
+IllegalArgumentException should be caught here.
+
