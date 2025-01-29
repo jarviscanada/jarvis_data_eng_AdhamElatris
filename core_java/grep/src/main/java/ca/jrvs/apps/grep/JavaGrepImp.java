@@ -5,9 +5,10 @@ import com.sun.org.slf4j.internal.LoggerFactory;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -121,9 +122,9 @@ public class JavaGrepImp implements JavaGrep {
           "The given input is not a valid file: " + inputFile.getAbsolutePath());
     }
     List<String> lines = new ArrayList<>();
-    try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
+    try (BufferedReader b_reader = new BufferedReader(new FileReader(inputFile))) {
       String line;
-      while ((line = br.readLine()) != null) {
+      while ((line = b_reader.readLine()) != null) {
         lines.add(line);
       }
     } catch (IOException e) {
@@ -134,18 +135,23 @@ public class JavaGrepImp implements JavaGrep {
 
   @Override
   public boolean containsPattern(String line) {
-    return Pattern.compile(regex).matcher(line).find();
+    return Pattern.compile(getRegex()).matcher(line).find();
   }
 
   @Override
   public void writeToFile(List<String> lines) throws IOException {
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))) {
+    try (
+        FileOutputStream fos = new FileOutputStream(outFile);
+        OutputStreamWriter osw = new OutputStreamWriter(fos);
+        BufferedWriter b_writer = new BufferedWriter(osw)
+    ) {
+
       for (String line : lines) {
-        bw.write(line);
-        bw.newLine();
+        b_writer.write(line);
+        b_writer.newLine();
       }
     } catch (IOException e) {
-      logger.error("Failed to write to file: " + outFile, e);
+      logger.error("Failed to write to file: {}", outFile, e);
       throw e;
     }
   }
