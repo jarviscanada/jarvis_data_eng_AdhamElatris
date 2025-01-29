@@ -1,11 +1,11 @@
 # Preferred name (Characters only)
 name: "Adham Elatris"
 # Your GitHub repo root URL
-github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_demo
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit.
+summary: Results-driven developer with deep expertise in both frontend and backend technologies, specializing in crafting innovative solutions that elevate team performance and drive business success. Proven ability to tackle complex challenges and deliver high-quality, scalable applications under tight deadlines. Adept at collaborating across teams to bring visionary ideas to life, with a focus on efficiency, precision, and long-term impact.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -17,20 +17,29 @@ skills:
     - RDBMS/SQL
     - Agile/Scrum
     - Git
+    - JavaScript
+    - Python
+    - SQL
+    - HTML
+    - CSS
+    - Spring Boot
+    - Docker
+    - Rest API
   # At least 5 skills
   competent:
-    - Donec
-    - fermentum
-    - Donec
-    - fermentum
-    - Donec
+    - C#
+    - PHP
+    - Kotlin
+    - Django
+    - Angular
   # At least 5 skills
   familiar:
-    - Donec
-    - fermentum
-    - fermentum
-    - fermentum
-    - fermentum
+    - C++
+    - Test-driven development
+    - Regex
+    - jQuery
+    - React
+    - Laravel
 
 # List of Jarvis projects
 jarvis_projects:
