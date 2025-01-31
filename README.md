@@ -46,10 +46,12 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 **Full Stack Developer -Intern, GoConnexions (2024)**: Developed Django REST API features for a professional social media app, similar to LinkedIn, enabling user management, account creation, profile updates, and connection management, with JWT authentication and a MariaDB database. On the frontend, used Flutter to build key features like login/registration, profile display and modification, and user/profile search.
 
+**Freelance developer, Groupe de Nettoyage (2023)**: Developed, designed, and deployed a website for the cleaning company, Groupe de Nettoyage, featuring services display, client requests, and candidate recruitment. Utilized JavaScript, HTML, CSS, and PHP to implement the site's functionality.
+
 
 ## Education
 **Rosemont College (2020-2024)**, Computer Science, Web and Mobile Application Development
-- Second best project of the semester
+- Second best project of the semester.
 - My project is showcased to new computer science students as an example of what they can achieve in the program.
 
 

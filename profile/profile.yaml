@@ -99,6 +99,10 @@ professional_experience:
     company: "GoConnexions"
     duration: "2024"
     description: "Developed Django REST API features for a professional social media app, similar to LinkedIn, enabling user management, account creation, profile updates, and connection management, with JWT authentication and a MariaDB database. On the frontend, used Flutter to build key features like login/registration, profile display and modification, and user/profile search."
+  - title: "Freelance developer"
+    company: "Groupe de Nettoyage"
+    duration: "2023"
+    description: "Developed, designed, and deployed a website for the cleaning company, Groupe de Nettoyage, featuring services display, client requests, and candidate recruitment. Utilized JavaScript, HTML, CSS, and PHP to implement the site's functionality."
 
 #List of edcuation
 education: 
@@ -108,7 +112,7 @@ education:
     department: "Web and Mobile Application Development"
     # optional
     awards_achievements: 
-      - Second best project of the semester
+      - Second best project of the semester.
       - My project is showcased to new computer science students as an example of what they can achieve in the program.
 
 
