@@ -6,7 +6,7 @@ Results-driven developer with deep expertise in both frontend and backend techno
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, Python, SQL, HTML, CSS, Spring Boot, Docker, Rest API
 
-**Competent:** C#, PHP, Kotlin, Django, Angular
+**Competent:** C#, ASP.net, PHP, Kotlin, Django, Angular, Flutter
 
 **Familiar:** C++, Test-driven development, Regex, jQuery, React, Laravel
 
@@ -15,13 +15,13 @@ Results-driven developer with deep expertise in both frontend and backend techno
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/linux_sql)]: Developed a Linux-based system for monitoring and managing hardware resources across multiple Linux hosts, collecting hardware specifications and usage metrics. Data is stored in a PostgreSQL database for analysis via SQL queries. The system is automated with Bash scripting, utilizes Regex for data filtering, and is containerized with Docker. Crontab schedules periodic data collection, while Git handles version control. Designed for modularity, scalability, and maintainability.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/core_java)]:
       
   - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
   - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - Grep App: Developed a Java application that mimics Linux grep command which allows users to search matching strings from files.
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/springboot)]: Not Started
 
@@ -42,18 +42,15 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Software Developer, Jarvis (2024-present)**: Implemented several key projects using Java, Spring Boot, PostgreSQL, and Bash scripting, gaining hands-on experience with diverse technologies. Enhanced both technical expertise and soft skills, strengthening problem-solving, collaboration, and software development abilities.
 
-**Tutor, XYZ Company (2019)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Full Stack Developer -Intern, GoConnexions (2024)**: Developed Django REST API features for a professional social media app, similar to LinkedIn, enabling user management, account creation, profile updates, and connection management, with JWT authentication and a MariaDB database. On the frontend, used Flutter to build key features like login/registration, profile display and modification, and user/profile search.
 
 
 ## Education
-**XYZ university (2012-2016)**, Bachelor of Applied Sciences, Electrical and Computer Engineering
-- Scholarship
-- Dean's List (2015, 2016): Ut enim ad minim veniam
-- GPA: 3.8/4.0
-
-**XYZ university (2016-2018)**, Master of Engineering, Electrical and Computer Engineering
+**Rosemont College (2020-2024)**, Computer Science, Web and Mobile Application Development
+- Second best project of the semester
+- My project is showcased to new computer science students as an example of what they can achieve in the program.
 
 
 ## Miscellaneous
