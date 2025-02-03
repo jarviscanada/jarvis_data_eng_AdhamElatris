@@ -35,9 +35,11 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 
 ## Highlighted Projects
-**Web app for resturant** [[GitHub](https://github.com/jarviscanada/jarvis_profile_builder)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Progression - A programming learning application**: Developed the comments feature for a coding education website used in multiple Quebec colleges, significantly improving communication between teachers and students. I used PHP Laravel, JavaScript, Vue.js and REST API
 
-**Machine Learning**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Matchez moi**: Led a team of four as SCRUM Master and developer for a dating website project. The webisite won second-best of the semester and is showcased to incoming students. I used Spring Boot, HTML (Thymeleaf), CSS and MariaDB database
+
+**Typing Speed Game** [[GitHub](https://github.com/aelatris/TypingGame)]: Developed a responsive typing game designed to help improve keyboard reactivity by testing users’ speed with random words. The game features customizable timers and difficulty settings, utilizing JavaScript, HTML, CSS, and a REST API.
 
 
 ## Professional Experiences
@@ -56,8 +58,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 
 ## Miscellaneous
-- Udacity Machine Learning (2019)
-- Winner
-- Basketball player
-- Competitive gaming
-- Volunteer, ABC Food bank: Ut enim ad minim veniam
+- Gamer
+- Soccer player and supporter
+- Comic books fan

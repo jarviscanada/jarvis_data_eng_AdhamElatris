@@ -76,15 +76,17 @@ jarvis_projects:
 # Feel free to add more projects
 highlighted_projects:
     #project name
-  - name: "Web app for resturant"
+  - name: "Progression - A programming learning application"
     #URL is optional
-    git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
-    # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-  - name: "Machine Learning"
     git_url:
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed the comments feature for a coding education website used in multiple Quebec colleges, significantly improving communication between teachers and students. I used PHP Laravel, JavaScript, Vue.js and REST API
+  - name: "Matchez moi"
+    git_url:
+    description: Led a team of four as SCRUM Master and developer for a dating website project. The webisite won second-best of the semester and is showcased to incoming students. I used Spring Boot, HTML (Thymeleaf), CSS and MariaDB database
+  - name: "Typing Speed Game"
+    git_url: "https://github.com/aelatris/TypingGame"
+    description: Developed a responsive typing game designed to help improve keyboard reactivity by testing users’ speed with random words. The game features customizable timers and difficulty settings, utilizing JavaScript, HTML, CSS, and a REST API.
 #List of professional experience
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
 #The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
@@ -120,15 +122,8 @@ education:
 #Optional section
 others:
     #category
-  - title: "Certificates"
-    #list of items
-    bullets:
-      - "Udacity Machine Learning (2019)"
-  - title: "Awards"
-    bullets:
-      - "Winner"
   - title: "Activities/Hobbies"
     bullets:
-      - "Basketball player"
-      - "Competitive gaming"
-      - "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+      - "Gamer"
+      - "Soccer player and supporter"
+      - "Comic books fan"
