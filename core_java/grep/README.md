@@ -3,7 +3,7 @@ The Java Grep application is a command-line tool that recursively searches files
 results to an output file. This project demonstrates core Java concepts, including file handling, regular expressions, recursion, lambda expression and the use of Java Streams for efficient data processing.
 
 The application also utilizes loggers to track the execution flow, log errors, and provide insights into the application’s behavior during 
-runtime. This ensures better debugging and monitoring.
+runtime. This ensures better debugging and monitoring. It also uses Exeptions for better error handling.
 
 The application was developed using Java 8, with IntelliJ IDEA as the development environment. For containerization, 
 Docker was employed to facilitate deployment.
