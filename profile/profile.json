@@ -19,7 +19,7 @@
       "name": "Progression - A programming learning application"
     },
     {
-      "description": "Led a team of four as SCRUM Master and developer for a dating website project. The webisite won second-best of the semester and is showcased to incoming students. I used Spring Boot, HTML (Thymeleaf), CSS and MariaDB database",
+      "description": "Led a team of four as SCRUM Master and developer for a dating website. The application won second-best of the semester and is showcased to incoming students. This project was built on Spring Boot, HTML (Thymeleaf), CSS and MariaDB database",
       "git_url": null,
       "name": "Matchez moi"
     },
@@ -37,46 +37,20 @@
     },
     {
       "description": [
-        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "Grep App: Developed a Java application that mimics Linux grep command which allows users to search matching strings from files."
+        "Grep App: Developed a Java application that mimics Linux grep command which allows users to search matching strings from files.",
+        "JDBC App: Implemented a stock quote application in Java that keeps track of stock changes, using HTTP requests, an RDBMS database, a REST API, and CRUD operations."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
-    },
-    {
-      "description": "",
-      "git_url": "/springboot",
-      "name": "Springboot App"
-    },
-    {
-      "description": "",
-      "git_url": "/python_data_anlytics",
-      "name": "Python Data Analytics"
-    },
-    {
-      "description": "",
-      "git_url": "/hadoop",
-      "name": "Hadoop"
-    },
-    {
-      "description": "",
-      "git_url": "/spark",
-      "name": "Spark"
-    },
-    {
-      "description": "",
-      "git_url": "/cloud_devops",
-      "name": "Cloud/DevOps"
     }
   ],
   "name": "Adham Elatris",
   "others": [
     {
       "bullets": [
-        "Gamer",
-        "Soccer player and supporter",
-        "Comic books fan"
+        "I love gaming, especially FPS and open-world story games. I'm a big fan of the Marvel Spider-Man PlayStation games and Red Dead Redemption 2.",
+        "Soccer is one of my passions. I'm a big FC Barcelona supporter and occasionally play with friends.",
+        "I’m a big fan of the Marvel Cinematic Universe. I love its storytelling, interconnected universe, and iconic characters that bring the comics to life on the big screen."
       ],
       "title": "Activities/Hobbies"
     }
@@ -90,7 +64,7 @@
     },
     {
       "company": "GoConnexions",
-      "description": "Developed Django REST API features for a professional social media app, similar to LinkedIn, enabling user management, account creation, profile updates, and connection management, with JWT authentication and a MariaDB database. On the frontend, used Flutter to build key features like login/registration, profile display and modification, and user/profile search.",
+      "description": "Developed Django REST API features for a professional social media app, similar to LinkedIn, enabling user management, account creation, profile updates, and connection management, with JWT authentication and a MariaDB database. Designed and implemented the frontend using Flutter to build key features like login/registration, profile display and modification, and user/profile search.",
       "duration": "2024",
       "title": "Full Stack Developer -Intern"
     },
