@@ -19,25 +19,29 @@ skills:
     - Git
     - JavaScript
     - Python
-    - SQL
     - HTML
     - CSS
+    - C#
+    - Kotlin
     - Spring Boot
     - Docker
     - Rest API
+    - Test-driven development
   # At least 5 skills
-  competent:
-    - C#
+  competent:    
     - ASP.net
+    - Vue.js
     - PHP
-    - Kotlin
+    - Unity game development
     - Django
     - Angular
     - Flutter
+    - Bootstrap
   # At least 5 skills
   familiar:
     - C++
-    - Test-driven development
+    - Figma
+    - Raspberry Pi
     - Regex
     - jQuery
     - React
@@ -53,8 +57,11 @@ jarvis_projects:
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:       
-      - "Grep App: Developed a Java application that mimics Linux grep command which allows users to search matching strings from files."
-      - "JDBC App: Implemented a stock quote application in Java that keeps track of stock changes, using HTTP requests, an RDBMS database, a REST API, and CRUD operations."
+      - "Grep App: Developed a fast and efficient tool for searching text in large files. Built with Java, it leverages functional programming principles to make the code more modular, readable, and maintainable. It uses regular expressions (Regex) for powerful pattern matching and applies streams and lambda expressions to process data efficiently. This makes it a great tool for anyone needing to search through text with precision and speed.
+
+"
+
+      - "Stock Quote App: Implemented a Stock Quote App, built with Java and a PostgreSQL database, that integrates with the Alpha Vantage API to fetch real-time stock data. It uses OkHttpClient for efficient HTTP requests and Jackson for quick JSON deserialization. Designed with a robust architecture, the app ensures smooth and reliable data management, making it a powerful tool for tracking, practicing, and managing stock investments in a real-world-like environment, without any risks."
 
 
 # List of personal or academic projects

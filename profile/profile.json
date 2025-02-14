@@ -37,8 +37,8 @@
     },
     {
       "description": [
-        "Grep App: Developed a Java application that mimics Linux grep command which allows users to search matching strings from files.",
-        "JDBC App: Implemented a stock quote application in Java that keeps track of stock changes, using HTTP requests, an RDBMS database, a REST API, and CRUD operations."
+        "Grep App: Developed a fast and efficient tool for searching text in large files. Built with Java, it leverages functional programming principles to make the code more modular, readable, and maintainable. It uses regular expressions (Regex) for powerful pattern matching and applies streams and lambda expressions to process data efficiently. This makes it a great tool for anyone needing to search through text with precision and speed.\n",
+        "Stock Quote App: Implemented a Stock Quote App, built with Java and a PostgreSQL database, that integrates with the Alpha Vantage API to fetch real-time stock data. It uses OkHttpClient for efficient HTTP requests and Jackson for quick JSON deserialization. Designed with a robust architecture, the app ensures smooth and reliable data management, making it a powerful tool for tracking, practicing, and managing stock investments in a real-world-like environment, without any risks."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
@@ -77,17 +77,19 @@
   ],
   "skills": {
     "competent": [
-      "C#",
       "ASP.net",
+      "Vue.js",
       "PHP",
-      "Kotlin",
+      "Unity game development",
       "Django",
       "Angular",
-      "Flutter"
+      "Flutter",
+      "Bootstrap"
     ],
     "familiar": [
       "C++",
-      "Test-driven development",
+      "Figma",
+      "Raspberry Pi",
       "Regex",
       "jQuery",
       "React",
@@ -101,12 +103,14 @@
       "Git",
       "JavaScript",
       "Python",
-      "SQL",
       "HTML",
       "CSS",
+      "C#",
+      "Kotlin",
       "Spring Boot",
       "Docker",
-      "Rest API"
+      "Rest API",
+      "Test-driven development"
     ]
   },
   "summary": "Results-driven developer with deep expertise in both frontend and backend technologies, specializing in crafting innovative solutions that elevate team performance and drive business success. Proven ability to tackle complex challenges and deliver high-quality, scalable applications under tight deadlines. Adept at collaborating across teams to bring visionary ideas to life, with a focus on efficiency, precision, and long-term impact."
