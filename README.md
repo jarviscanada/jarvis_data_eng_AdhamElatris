@@ -31,6 +31,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 **Typing Speed Game** [[GitHub](https://github.com/aelatris/TypingGame)]: Developed a responsive typing game designed to help improve keyboard reactivity by testing users’ speed with random words. The game features customizable timers and difficulty settings, utilizing JavaScript, HTML, CSS, and a REST API.
 
+**LoueMonChar** [[GitHub](https://github.com/aelatris/Api-location-auto)]: LoueMonChar is a mobile app that allows users to rent or list their vehicles. The app connects users with a car rental service, enabling them to find a car that suits their needs or offer their own vehicle for rent. Users receive payment based on the rental duration and the car model. The app’s API facilitates seamless data sharing with the rental service to enhance the user experience.
+
 
 ## Professional Experiences
 

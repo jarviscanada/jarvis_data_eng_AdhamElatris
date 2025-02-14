@@ -79,6 +79,9 @@ highlighted_projects:
   - name: "Typing Speed Game"
     git_url: "https://github.com/aelatris/TypingGame"
     description: Developed a responsive typing game designed to help improve keyboard reactivity by testing users’ speed with random words. The game features customizable timers and difficulty settings, utilizing JavaScript, HTML, CSS, and a REST API.
+  - name: "LoueMonChar"
+    git_url: "https://github.com/aelatris/Api-location-auto"
+    description: LoueMonChar is a mobile app that allows users to rent or list their vehicles. The app connects users with a car rental service, enabling them to find a car that suits their needs or offer their own vehicle for rent. Users receive payment based on the rental duration and the car model. The app’s API facilitates seamless data sharing with the rental service to enhance the user experience.
 #List of professional experience
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
 #The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
