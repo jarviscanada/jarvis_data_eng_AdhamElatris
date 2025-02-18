@@ -36,7 +36,8 @@ public class Quote {
     this.timestamp = timestamp;
   }
 
-  public Quote() {}
+  public Quote() {
+  }
 
 
   public String getTicker() {
@@ -129,18 +130,18 @@ public class Quote {
 
   @Override
   public String toString() {
-    return "Quote{" + "\n"+
-        " ticker: " + getTicker() + "\n"+
-        " open: " + getOpen() + "\n"+
-        " high: " + getHigh() + "\n"+
-        " low: " + getLow() + "\n"+
-        " price: " + getPrice() + "\n"+
-        " volume: " + getVolume() + "\n"+
-        " latestTradingDay:" + getLatestTradingDay() + "\n"+
-        " previousClose: " + getPreviousClose() + "\n"+
-        " change: " + getChange() + "\n"+
-        " changePercent: '" + getChangePercent() + '\'' + "\n"+
-        " timestamp: " + getTimestamp() + "\n"+
+    return "Quote{" + "\n" +
+        " ticker: " + getTicker() + "\n" +
+        " open: " + getOpen() + "\n" +
+        " high: " + getHigh() + "\n" +
+        " low: " + getLow() + "\n" +
+        " price: " + getPrice() + "\n" +
+        " volume: " + getVolume() + "\n" +
+        " latestTradingDay:" + getLatestTradingDay() + "\n" +
+        " previousClose: " + getPreviousClose() + "\n" +
+        " change: " + getChange() + "\n" +
+        " changePercent: '" + getChangePercent() + '\'' + "\n" +
+        " timestamp: " + getTimestamp() + "\n" +
         '}';
   }
 }
