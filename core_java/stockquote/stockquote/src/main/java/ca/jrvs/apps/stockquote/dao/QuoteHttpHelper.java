@@ -15,7 +15,6 @@ public class QuoteHttpHelper {
   private static final String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
   private final OkHttpClient client;
 
-  // Constructor
   public QuoteHttpHelper() {
     this.client = new OkHttpClient();
   }
@@ -30,11 +29,9 @@ public class QuoteHttpHelper {
   }
 
   public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
-    // Construct the URL for the API request
     String url = "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
         + "&datatype=json";
 
-    // Build the request
     Request request = new Request.Builder()
         .url(url)
         .header("X-RapidAPI-Key", apiKey)
