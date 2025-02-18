@@ -16,13 +16,16 @@ public class Main {
     String symbol = "MSFT";
 
     HttpRequest request = HttpRequest.newBuilder()
-        .uri(URI.create("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol="+symbol+"&datatype=json"))
+        .uri(URI.create(
+            "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
+                + "&datatype=json"))
         .header("X-RapidAPI-Key", apiKey)
         .header("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
         .method("GET", HttpRequest.BodyPublishers.noBody())
         .build();
     try {
-      HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+      HttpResponse<String> response = HttpClient.newHttpClient()
+          .send(request, HttpResponse.BodyHandlers.ofString());
       System.out.println(response.body());
     } catch (InterruptedException e) {
       e.printStackTrace();

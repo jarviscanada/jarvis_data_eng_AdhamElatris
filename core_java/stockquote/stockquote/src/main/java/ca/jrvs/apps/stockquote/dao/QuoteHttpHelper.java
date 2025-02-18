@@ -2,30 +2,37 @@ package ca.jrvs.apps.stockquote.dao;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.net.http.HttpRequest;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.Date;
-
 public class QuoteHttpHelper {
 
 
-  private OkHttpClient client;
-  private static String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
+  private static final String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
+  private final OkHttpClient client;
 
   // Constructor
   public QuoteHttpHelper() {
     this.client = new OkHttpClient();
   }
 
+  public static void main(String[] args) {
+    QuoteHttpHelper quoteHttpHelper = new QuoteHttpHelper();
+
+    Quote quote = quoteHttpHelper.fetchQuoteInfo("MSFT");
+    System.out.println(quote);
+
+
+  }
 
   public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
     // Construct the URL for the API request
-    String url = "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol="+symbol+"&datatype=json";
+    String url = "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
+        + "&datatype=json";
 
     // Build the request
     Request request = new Request.Builder()
@@ -35,7 +42,6 @@ public class QuoteHttpHelper {
         .build();
 
     try (Response response = client.newCall(request).execute()) {
-      // Check if the response is successful
       if (!response.isSuccessful()) {
         throw new IOException("Unexpected response: " + response);
       }
@@ -48,7 +54,6 @@ public class QuoteHttpHelper {
         throw new IllegalArgumentException("No data found for symbol: " + symbol);
       }
 
-      // Create and return a new Quote object
       Quote quote = new Quote(
           rootNode.get("01. symbol").asText(),
           rootNode.get("02. open").asDouble(),
@@ -68,14 +73,5 @@ public class QuoteHttpHelper {
     } catch (IOException e) {
       throw new IllegalArgumentException("Error fetching stock data: " + e.getMessage());
     }
-  }
-
-  public static void main(String[] args) {
-    QuoteHttpHelper quoteHttpHelper = new QuoteHttpHelper();
-
-    Quote quote = quoteHttpHelper.fetchQuoteInfo("MSFT");
-    System.out.println(quote);
-
-
   }
 }
