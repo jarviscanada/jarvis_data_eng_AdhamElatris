@@ -12,7 +12,7 @@ public class Main {
 
   public static void main(String[] args) {
 
-    String apiKey = "";
+    String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
     String symbol = "MSFT";
 
     HttpRequest request = HttpRequest.newBuilder()
