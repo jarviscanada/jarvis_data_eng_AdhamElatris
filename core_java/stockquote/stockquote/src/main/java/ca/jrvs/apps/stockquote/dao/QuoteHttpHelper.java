@@ -19,15 +19,6 @@ public class QuoteHttpHelper {
     this.client = new OkHttpClient();
   }
 
-  public static void main(String[] args) {
-    QuoteHttpHelper quoteHttpHelper = new QuoteHttpHelper();
-
-    Quote quote = quoteHttpHelper.fetchQuoteInfo("MSFT");
-    System.out.println(quote);
-
-
-  }
-
   public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
     String url = "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
         + "&datatype=json";
