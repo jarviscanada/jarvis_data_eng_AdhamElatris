@@ -108,8 +108,8 @@ public class QuoteDao implements CrudDao<Quote, String> {
         quote.setTimestamp(rs.getTimestamp("timestamp"));
         quotes.add(quote);
       }
-      logger.info("\nQuote NOT found: {}", quote);
     } catch (SQLException e) {
+      logger.info("\nQuote NOT found");
       throw new IllegalArgumentException("Error retrieving all quotes", e);
     }
 

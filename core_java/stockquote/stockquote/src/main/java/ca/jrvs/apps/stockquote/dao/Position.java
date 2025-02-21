@@ -11,6 +11,10 @@ public class Position {
     this.valuePaid = valuePaid;
   }
 
+  public Position() {
+
+  }
+
   public String getTicker() {
     return ticker;
   }
@@ -37,10 +41,9 @@ public class Position {
 
   @Override
   public String toString() {
-    return "Position{" +
-        "ticker='" + ticker + '\'' +
-        ", numOfShares=" + numOfShares +
-        ", valuePaid=" + valuePaid +
-        '}';
+    return "\nPosition:" +
+        "\nticker='" + getTicker() + '\'' +
+        "\nnumOfShares=" + getNumOfShares() +
+        "\nvaluePaid=" + getValuePaid() + "\n";
   }
 }
