@@ -8,12 +8,15 @@ import java.util.Date;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QuoteHttpHelper {
 
 
   private static final String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
   private final OkHttpClient client;
+  private static final Logger logger = LoggerFactory.getLogger(QuoteDao.class);
 
   public QuoteHttpHelper() {
     this.client = new OkHttpClient();
@@ -39,7 +42,9 @@ public class QuoteHttpHelper {
       JsonNode rootNode = objectMapper.readTree(responseString).get("Global Quote");
 
       if (rootNode == null || rootNode.isEmpty()) {
-        throw new IllegalArgumentException("No data found for symbol: " + symbol);
+        logger.error("\nNo data found for symbol: " + symbol);
+        return null;
+        // throw new IllegalArgumentException("No data found for symbol: " + symbol);
       }
 
       Quote quote = new Quote(
