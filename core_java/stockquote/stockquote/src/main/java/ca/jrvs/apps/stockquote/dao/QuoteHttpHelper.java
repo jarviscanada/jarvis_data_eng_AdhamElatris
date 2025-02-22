@@ -15,8 +15,8 @@ public class QuoteHttpHelper {
 
 
   private static final String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
-  private final OkHttpClient client;
   private static final Logger logger = LoggerFactory.getLogger(QuoteDao.class);
+  private final OkHttpClient client;
 
   public QuoteHttpHelper() {
     this.client = new OkHttpClient();
