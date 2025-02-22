@@ -96,17 +96,14 @@ public class PositionDao implements CrudDao<Position, String> {
 
     try (PreparedStatement stmt = c.prepareStatement(sql)) {
       ResultSet rs = stmt.executeQuery();
-
-      if (rs.next()) {
-
-        while (rs.next()) {
-          Position position = new Position();
-          position.setTicker(rs.getString("symbol"));
-          position.setNumOfShares(rs.getInt("number_of_shares"));
-          position.setValuePaid(rs.getDouble("value_paid"));
-          positions.add(position);
-        }
-      } else {
+      while (rs.next()) {
+        Position position = new Position();
+        position.setTicker(rs.getString("symbol"));
+        position.setNumOfShares(rs.getInt("number_of_shares"));
+        position.setValuePaid(rs.getDouble("value_paid"));
+        positions.add(position);
+      }
+      if (positions.isEmpty()) {
         logger.info("\nPosition NOT found");
       }
     } catch (SQLException e) {
@@ -116,6 +113,7 @@ public class PositionDao implements CrudDao<Position, String> {
     positions.forEach(position -> logger.info("Position: {}", position));
     return positions;
   }
+
 
   @Override
   public void deleteById(String s) throws IllegalArgumentException {
