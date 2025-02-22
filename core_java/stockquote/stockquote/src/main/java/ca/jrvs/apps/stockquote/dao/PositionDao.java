@@ -1,8 +1,7 @@
 package ca.jrvs.apps.stockquote.dao;
 
 
-import static kotlin.text.Typography.quote;
-
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,15 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.sql.Connection;
-import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PositionDao implements CrudDao<Position, String> {
 
-  private Connection c;
   private static final Logger logger = LoggerFactory.getLogger(PositionDao.class);
+  private final Connection c;
 
   public PositionDao(Connection c) {
     this.c = c;
@@ -37,7 +34,7 @@ public class PositionDao implements CrudDao<Position, String> {
       if (!rs.next()) {
         logger.error("Stock symbol does not exist in Quote table: " + entity.getTicker());
         return null;
-      }else{
+      } else {
         stockPrice = rs.getDouble("price");
       }
     } catch (SQLException e) {
@@ -51,7 +48,7 @@ public class PositionDao implements CrudDao<Position, String> {
 
     double valuePaid = entity.getNumOfShares() * stockPrice;
 
-    try (PreparedStatement stmt =  c.prepareStatement(sql)){
+    try (PreparedStatement stmt = c.prepareStatement(sql)) {
       stmt.setString(1, entity.getTicker());
       stmt.setInt(2, entity.getNumOfShares());
       stmt.setDouble(3, valuePaid);
@@ -63,7 +60,7 @@ public class PositionDao implements CrudDao<Position, String> {
       logger.info("\nPosition: {} has been saved successfully!", entity.getTicker());
 
       return entity;
-    }catch (SQLException e){
+    } catch (SQLException e) {
       throw new IllegalArgumentException(e);
     }
   }
@@ -72,11 +69,11 @@ public class PositionDao implements CrudDao<Position, String> {
   public Optional<Position> findById(String s) throws IllegalArgumentException {
     String sql = "SELECT * FROM position WHERE symbol = ?";
     Position position = new Position();
-    try(PreparedStatement stmt = c.prepareStatement(sql)) {
+    try (PreparedStatement stmt = c.prepareStatement(sql)) {
       stmt.setString(1, s);
       ResultSet rs = stmt.executeQuery();
 
-      if(rs.next()) {
+      if (rs.next()) {
         position.setTicker(rs.getString("symbol"));
         position.setNumOfShares(rs.getInt("number_of_shares"));
         position.setValuePaid(rs.getDouble("value_paid"));
@@ -84,9 +81,9 @@ public class PositionDao implements CrudDao<Position, String> {
         logger.info("\nPosition found: {}", position);
         return Optional.of(position);
       }
-       logger.info("\nPosition NOT found !");
-       return Optional.empty();
-    }catch (SQLException e){
+      logger.info("\nPosition NOT found !");
+      return Optional.empty();
+    } catch (SQLException e) {
       throw new IllegalArgumentException(e);
     }
   }
@@ -95,8 +92,8 @@ public class PositionDao implements CrudDao<Position, String> {
   public Iterable<Position> findAll() {
     String sql = "SELECT * FROM position";
     List<Position> positions = new ArrayList<>();
-    
-    try(PreparedStatement stmt = c.prepareStatement(sql)) {
+
+    try (PreparedStatement stmt = c.prepareStatement(sql)) {
       ResultSet rs = stmt.executeQuery();
 
       if (rs.next()) {
@@ -108,10 +105,10 @@ public class PositionDao implements CrudDao<Position, String> {
           position.setValuePaid(rs.getDouble("value_paid"));
           positions.add(position);
         }
-      }else{
+      } else {
         logger.info("\nPosition NOT found");
       }
-    }catch (SQLException e){
+    } catch (SQLException e) {
       throw new IllegalArgumentException(e);
     }
 

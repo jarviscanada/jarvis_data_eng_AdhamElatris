@@ -6,7 +6,6 @@ import java.util.Date;
 public class Quote {
 
   private String ticker; //id
-
   private double open;
   private double high;
   private double low;
@@ -16,7 +15,6 @@ public class Quote {
   private double previousClose;
   private double change;
   private String changePercent;
-
   private Timestamp timestamp; //time when the info was pulled
 
 
