@@ -1,4 +1,4 @@
-package ca.jrvs.apps.stockquote.dao;
+package ca.jrvs.apps.stockquote.model;
 
 import java.sql.Timestamp;
 import java.util.Date;
