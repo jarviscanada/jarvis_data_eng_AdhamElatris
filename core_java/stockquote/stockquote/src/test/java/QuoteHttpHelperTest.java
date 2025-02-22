@@ -2,8 +2,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import ca.jrvs.apps.stockquote.model.Quote;
 import ca.jrvs.apps.stockquote.dao.QuoteHttpHelper;
+import ca.jrvs.apps.stockquote.model.Quote;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
