@@ -39,6 +39,7 @@ public class PositionDao implements CrudDao<Position, String> {
         stockPrice = rs.getDouble("price");
       }
     } catch (SQLException e) {
+      logger.error("Error saving position: ", entity.getTicker());
       throw new IllegalArgumentException("Error checking Quote table", e);
     }
 
@@ -82,7 +83,7 @@ public class PositionDao implements CrudDao<Position, String> {
         logger.info("\nPosition found: {}", position);
         return Optional.of(position);
       }
-      logger.info("\nPosition NOT found !");
+      logger.error("\nPosition NOT found !");
       return Optional.empty();
     } catch (SQLException e) {
       throw new IllegalArgumentException(e);
@@ -104,7 +105,7 @@ public class PositionDao implements CrudDao<Position, String> {
         positions.add(position);
       }
       if (positions.isEmpty()) {
-        logger.info("\nPosition NOT found");
+        logger.error("\nPosition NOT found");
       }
     } catch (SQLException e) {
       throw new IllegalArgumentException(e);
@@ -124,7 +125,7 @@ public class PositionDao implements CrudDao<Position, String> {
       if (affected > 0) {
         logger.info("\nPosition deleted successfully!");
       } else {
-        logger.info("\nPosition does not exist!");
+        logger.error("\nPosition does not exist!");
       }
     } catch (SQLException e) {
       throw new IllegalArgumentException("Error deleting Position", e);
@@ -138,7 +139,7 @@ public class PositionDao implements CrudDao<Position, String> {
       stmt.executeUpdate(sql);
       logger.info("\nAll positions have been deleted successfully!");
     } catch (SQLException e) {
-      logger.info("\nError deleting all positions !");
+      logger.error("\nError deleting all positions !");
       throw new IllegalArgumentException("Error deleting all positions", e);
     }
   }

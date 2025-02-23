@@ -49,6 +49,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
       logger.info("\nQuote: {} has been saved successfully!", quote.getTicker());
       return quote;
     } catch (SQLException e) {
+      logger.error("Error saving quote: ", quote.getTicker());
       throw new IllegalArgumentException("Error saving quote", e);
     }
   }
@@ -78,7 +79,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
         logger.info("\nQuote found: {}", quote);
         return Optional.of(quote);
       }
-      logger.info("\nQuote NOT found !");
+      logger.error("\nQuote NOT found !");
       return Optional.empty();
     } catch (SQLException e) {
       throw new IllegalArgumentException("Error finding quote", e);
@@ -109,7 +110,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
         quotes.add(quote);
       }
     } catch (SQLException e) {
-      logger.info("\nQuote NOT found");
+      logger.error("\nQuote NOT found");
       throw new IllegalArgumentException("Error retrieving all quotes", e);
     }
 
@@ -126,7 +127,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
       if (affected > 0) {
         logger.info("\nQuote deleted successfully!");
       } else {
-        logger.info("\nQuote does not exist!");
+        logger.error("\nQuote does not exist!");
       }
     } catch (SQLException e) {
       throw new IllegalArgumentException("Error deleting quote", e);
