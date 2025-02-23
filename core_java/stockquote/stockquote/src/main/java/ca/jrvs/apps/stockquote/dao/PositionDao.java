@@ -143,4 +143,24 @@ public class PositionDao implements CrudDao<Position, String> {
       throw new IllegalArgumentException("Error deleting all positions", e);
     }
   }
+
+  public boolean tickerExistsInQuoteTable(String ticker) {
+    String query = "SELECT COUNT(*) FROM quote WHERE symbol = ?";
+    try (PreparedStatement stmt = c.prepareStatement(query)) {
+      stmt.setString(1, ticker);
+      ResultSet rs = stmt.executeQuery();
+
+      if (rs.next()) {
+        if (rs.getInt(1) > 0) {
+          logger.debug("Ticker {} exists in the Quote table.", ticker);
+          return true;
+        } else {
+          logger.debug("Ticker {} does not exist in the Quote table.", ticker);
+        }
+      }
+    } catch (SQLException e) {
+      logger.error("Error checking if ticker exists in Quote table: " + ticker, e);
+    }
+    return false;
+  }
 }
