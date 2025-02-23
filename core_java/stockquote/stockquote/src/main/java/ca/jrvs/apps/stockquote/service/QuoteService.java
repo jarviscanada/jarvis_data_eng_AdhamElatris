@@ -28,6 +28,7 @@ public class QuoteService {
   public Optional<Quote> fetchQuoteDataFromAPI(String ticker) {
     if (ticker == null || ticker.isBlank()) {
       logger.error("Invalid symbol");
+      throw new IllegalArgumentException("Invalid input");
     } else {
       Optional<Quote> quote = Optional.ofNullable(httpHelper.fetchQuoteInfo(ticker));
       if (quote.isPresent()) {
