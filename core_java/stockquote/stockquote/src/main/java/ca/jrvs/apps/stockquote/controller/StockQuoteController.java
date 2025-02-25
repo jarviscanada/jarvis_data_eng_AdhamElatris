@@ -126,7 +126,7 @@ public class StockQuoteController {
   }
 
   private void viewQuotes() {
-    System.out.println("\nHere are the available Quotes:");
+    System.out.println("\nHere are your available Quotes:");
     quoteService.getAllQuotes();
   }
 
