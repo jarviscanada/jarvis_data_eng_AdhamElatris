@@ -1,14 +1,8 @@
 package ca.jrvs.apps.stockquote.service;
 
 import ca.jrvs.apps.stockquote.dao.PositionDao;
-import ca.jrvs.apps.stockquote.dao.QuoteDao;
-import ca.jrvs.apps.stockquote.dao.QuoteHttpHelper;
 import ca.jrvs.apps.stockquote.model.Position;
-import ca.jrvs.apps.stockquote.model.Quote;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Optional;
-import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

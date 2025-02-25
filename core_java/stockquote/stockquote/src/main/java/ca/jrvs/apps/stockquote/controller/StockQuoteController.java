@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class StockQuoteController {
 
-  private QuoteService quoteService;
-  private PositionService positionService;
-  private Scanner scanner;
+  private final QuoteService quoteService;
+  private final PositionService positionService;
+  private final Scanner scanner;
 
   public StockQuoteController(QuoteService quoteService, PositionService positionService) {
     this.quoteService = quoteService;
