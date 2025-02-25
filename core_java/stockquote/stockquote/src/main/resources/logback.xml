@@ -1,0 +1,41 @@
+<configuration>
+  <!-- Appender for general application logs: accepts only INFO logs -->
+  <appender name="FILE_INFO" class="ch.qos.logback.core.FileAppender">
+    <file>src/main/java/ca/jrvs/apps/stockquote/logs/app.log</file>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+    <!-- Accept only INFO messages -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>INFO</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- Appender for error logs: accepts only ERROR logs -->
+  <appender name="FILE_ERROR" class="ch.qos.logback.core.FileAppender">
+    <file>src/main/java/ca/jrvs/apps/stockquote/logs/error.log</file>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+    <!-- Accept only ERROR messages -->
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+  </appender>
+
+  <!-- Logger for your application's package -->
+  <logger name="ca.jrvs.apps.stockquote" level="INFO" additivity="false">
+    <!-- Send all logs from this package to both appenders -->
+    <appender-ref ref="FILE_INFO" />
+    <appender-ref ref="FILE_ERROR" />
+  </logger>
+
+  <!-- Optionally, you can configure the root logger if needed -->
+  <root level="ERROR">
+    <appender-ref ref="FILE_ERROR" />
+  </root>
+</configuration>
