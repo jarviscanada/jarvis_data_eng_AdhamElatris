@@ -37,7 +37,7 @@ public class QuoteService {
         return Optional.of(quote.get());
       }
     }
-    logger.error("\nError fetching quote, make sure symbol is correct");
+    logger.error("\nError fetching quote: " + ticker + " make sure symbol is correct!");
     return Optional.empty();
   }
 
