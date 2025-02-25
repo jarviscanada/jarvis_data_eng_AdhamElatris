@@ -6,13 +6,15 @@ import ca.jrvs.apps.stockquote.dao.QuoteDao;
 import ca.jrvs.apps.stockquote.dao.QuoteHttpHelper;
 import ca.jrvs.apps.stockquote.service.PositionService;
 import ca.jrvs.apps.stockquote.service.QuoteService;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import okhttp3.OkHttpClient;
 
 public class Main {
@@ -37,8 +39,11 @@ public class Main {
       e.printStackTrace();
     }
     OkHttpClient client = new OkHttpClient();
-    String url = "jdbc:postgresql://"+properties.get("server")+":"+properties.get("port")+"/"+properties.get("database");
-    try (Connection c = DriverManager.getConnection(url, properties.get("username"), properties.get("password"))) {
+    String url =
+        "jdbc:postgresql://" + properties.get("server") + ":" + properties.get("port") + "/"
+            + properties.get("database");
+    try (Connection c = DriverManager.getConnection(url, properties.get("username"),
+        properties.get("password"))) {
       QuoteDao qRepo = new QuoteDao(c);
       PositionDao pRepo = new PositionDao(c);
       QuoteHttpHelper rcon = new QuoteHttpHelper(properties.get("api-key"), client);

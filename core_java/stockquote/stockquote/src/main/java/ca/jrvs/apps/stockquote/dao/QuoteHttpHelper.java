@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
 public class QuoteHttpHelper {
 
 
-  private String apiKey = "";
   private static final Logger logger = LoggerFactory.getLogger(QuoteDao.class);
   private final OkHttpClient client;
+  private String apiKey = "";
 
 
   public QuoteHttpHelper(String apiKey, OkHttpClient client) {

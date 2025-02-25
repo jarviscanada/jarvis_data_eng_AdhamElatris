@@ -1,7 +1,6 @@
 package ca.jrvs.apps.stockquote.dao;
 
 import ca.jrvs.apps.stockquote.model.Quote;
-import ca.jrvs.apps.stockquote.service.PositionService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,8 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import okhttp3.OkHttpClient;
-import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +24,8 @@ public class QuoteDao implements CrudDao<Quote, String> {
   @Override
   public Quote save(Quote quote) throws IllegalArgumentException {
     String sql =
-        "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent, timestamp) " +
+        "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent, timestamp) "
+            +
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
             "ON CONFLICT (symbol) DO UPDATE SET " +
             "open=EXCLUDED.open, high=EXCLUDED.high, low=EXCLUDED.low, price=EXCLUDED.price, " +
@@ -62,7 +60,6 @@ public class QuoteDao implements CrudDao<Quote, String> {
       throw new IllegalArgumentException("Error saving quote", e);
     }
   }
-
 
 
   @Override

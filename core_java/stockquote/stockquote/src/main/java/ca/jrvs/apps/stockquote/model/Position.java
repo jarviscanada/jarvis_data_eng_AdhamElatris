@@ -44,7 +44,7 @@ public class Position {
   public String toString() {
     return "\nPosition:" +
         "\nticker: '" + getTicker() + '\'' +
-        "\nYou number of shares: " + getNumOfShares() +
+        "\nYour number of shares: " + getNumOfShares() +
         "\nThe value of your shares: " + getValuePaid() + "\n";
   }
 }
