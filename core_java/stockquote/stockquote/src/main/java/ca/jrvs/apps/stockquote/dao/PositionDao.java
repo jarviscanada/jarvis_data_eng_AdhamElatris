@@ -106,6 +106,7 @@ public class PositionDao implements CrudDao<Position, String> {
       }
       if (positions.isEmpty()) {
         logger.error("\nYou do not have any Positions at this time!");
+        System.out.println("\nYou do not have any Positions at this time!");
       }
     } catch (SQLException e) {
       throw new IllegalArgumentException(e);
