@@ -85,8 +85,8 @@ public class PositionService {
   }
 
 
-  public Iterable<Position> getAllPositions() {
-    return dao.findAll();
+  public void getAllPositions() {
+    System.out.println(dao.findAll());
   }
 
   public Optional<Position> getPosition(String ticker) {
