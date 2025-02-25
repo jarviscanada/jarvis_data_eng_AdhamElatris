@@ -80,7 +80,7 @@ public class PositionDao implements CrudDao<Position, String> {
         position.setNumOfShares(rs.getInt("number_of_shares"));
         position.setValuePaid(rs.getDouble("value_paid"));
 
-        logger.info("\nPosition found: {}", position);
+        logger.info("\nPosition found ! {}", position);
         return Optional.of(position);
       }
       logger.error("\nPosition NOT found !");

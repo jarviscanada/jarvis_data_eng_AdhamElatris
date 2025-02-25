@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Request.Builder;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +16,15 @@ import org.slf4j.LoggerFactory;
 public class QuoteHttpHelper {
 
 
-  private static final String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
+  private String apiKey = "";
   private static final Logger logger = LoggerFactory.getLogger(QuoteDao.class);
   private final OkHttpClient client;
+
+
+  public QuoteHttpHelper(String apiKey, OkHttpClient client) {
+    this.client = client;
+    this.apiKey = apiKey;
+  }
 
   public QuoteHttpHelper() {
     this.client = new OkHttpClient();
@@ -27,7 +34,7 @@ public class QuoteHttpHelper {
     String url = "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
         + "&datatype=json";
 
-    Request request = new Request.Builder()
+    Request request = new Builder()
         .url(url)
         .header("X-RapidAPI-Key", apiKey)
         .header("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
