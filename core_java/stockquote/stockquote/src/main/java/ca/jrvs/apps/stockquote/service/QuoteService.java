@@ -42,7 +42,7 @@ public class QuoteService {
   }
 
   public void getAllQuotes() {
-    dao.findAll();
+    System.out.println(dao.findAll());
   }
 
   public Optional<Quote> getQuoteByTicker(String ticker) {

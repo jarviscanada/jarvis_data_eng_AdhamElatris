@@ -128,7 +128,8 @@ public class Quote {
 
   @Override
   public String toString() {
-    return "Quote{" + "\n" +
+    return
+        "Quote:" + "\n" +
         " ticker: " + getTicker() + "\n" +
         " open: " + getOpen() + "\n" +
         " high: " + getHigh() + "\n" +
@@ -139,7 +140,7 @@ public class Quote {
         " previousClose: " + getPreviousClose() + "\n" +
         " change: " + getChange() + "\n" +
         " changePercent: '" + getChangePercent() + '\'' + "\n" +
-        " timestamp: " + getTimestamp() + "\n" +
-        '}';
+        " timestamp: " + getTimestamp() + "\n"
+        + "*********************************************************\n";
   }
 }

@@ -121,7 +121,11 @@ public class QuoteDao implements CrudDao<Quote, String> {
       throw new IllegalArgumentException("Error retrieving all quotes", e);
     }
 
-    quotes.forEach(quote -> logger.info("\nQuote: {}", quote));
+    if (quotes.isEmpty()) {
+      logger.info("No quotes found in the database.");
+    } else {
+      quotes.forEach(quote -> logger.info("Quote: {}", quote));
+    }
     return quotes;
   }
 
