@@ -105,13 +105,13 @@ public class PositionDao implements CrudDao<Position, String> {
         positions.add(position);
       }
       if (positions.isEmpty()) {
-        logger.error("\nPosition NOT found");
+        logger.error("\nYou do not have any Positions at this time!");
       }
     } catch (SQLException e) {
       throw new IllegalArgumentException(e);
     }
 
-    positions.forEach(position -> logger.info("Position: {}", position));
+    positions.forEach(position -> logger.info("Here are all Position: {}", position));
     return positions;
   }
 

@@ -1,5 +1,6 @@
 package ca.jrvs.apps.stockquote.controller;
 
+import ca.jrvs.apps.stockquote.model.Position;
 import ca.jrvs.apps.stockquote.model.Quote;
 import ca.jrvs.apps.stockquote.service.PositionService;
 import ca.jrvs.apps.stockquote.service.QuoteService;
@@ -74,12 +75,20 @@ public class StockQuoteController {
   private void getStockInfo() {
     System.out.print("Enter stock ticker: ");
     String ticker = scanner.nextLine().toUpperCase();
+
     try {
-      quoteService.getQuoteByTicker(ticker);
+      // Assuming the service returns an Optional<Quote>
+      Optional<Quote> quote = quoteService.getQuoteByTicker(ticker);
+      if (quote.isPresent()) {
+        System.out.println("Quote found: " + quote.get());
+      } else {
+        System.out.println("No quote found for ticker: " + ticker);
+      }
     } catch (Exception e) {
       System.out.println("Error retrieving stock information: " + e.getMessage());
     }
   }
+
 
   private void buyStock() {
     System.out.print("Enter stock ticker: ");
@@ -147,10 +156,16 @@ public class StockQuoteController {
     System.out.print("Enter Position ticker: ");
     String ticker = scanner.nextLine().toUpperCase();
     try {
-      positionService.getPosition(ticker);
+      Optional<Position> position = positionService.getPosition(ticker);
+      if (position.isPresent()) {
+        System.out.println("Position found ! " + position.get());
+      } else {
+        System.out.println("No position found for ticker: " + ticker);
+      }
     } catch (Exception e) {
       System.out.println("Error retrieving Position information: " + e.getMessage());
     }
   }
+
 
 }

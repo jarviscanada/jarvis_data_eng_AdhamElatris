@@ -87,11 +87,13 @@ public class PositionService {
     daoLogger.setLevel(originalLevel); // Restore log level
   }
 
-  public void getAllPositions() {
-    dao.findAll();
+  public Iterable<Position> getAllPositions() {
+    return dao.findAll();
   }
 
-  public void getPosition(String ticker) {
-    dao.findById(ticker);
+  public Optional<Position> getPosition(String ticker) {
+    // You can add any additional business logic or validation here if needed.
+    return dao.findById(ticker);
   }
+
 }

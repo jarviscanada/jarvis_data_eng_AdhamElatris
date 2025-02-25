@@ -122,3 +122,66 @@ ticker: 'NVDA'
 Your number of shares: 10
 The value of your shares: 1302.8
 
+2025-02-25 10:33:09 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote found: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 10:39:19 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote found: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 10:39:56 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote found: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 11:04:00 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'NVDA'
+Your number of shares: 10
+The value of your shares: 1302.8
+
+2025-02-25 11:04:33 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'AAPL'
+Your number of shares: 100
+The value of your shares: 24555.0
+
+2025-02-25 11:17:21 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'NFLX'
+Your number of shares: 1
+The value of your shares: 988.47
+

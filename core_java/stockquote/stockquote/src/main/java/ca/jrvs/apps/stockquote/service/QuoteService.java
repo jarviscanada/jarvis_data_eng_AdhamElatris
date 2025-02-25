@@ -45,14 +45,15 @@ public class QuoteService {
     dao.findAll();
   }
 
-  public void getQuoteByTicker(String ticker) {
+  public Optional<Quote> getQuoteByTicker(String ticker) {
     if (ticker == null || ticker.isBlank()) {
-      logger.error("Invalid symbol");
+      System.out.println("Invalid symbol. Please enter a valid stock ticker.");
       throw new IllegalArgumentException("Invalid input");
     } else {
-      dao.findById(ticker);
+      return dao.findById(ticker);
     }
   }
+
 
   public void addNewQuote(String ticker) {
     if (ticker == null || ticker.isBlank()) {
