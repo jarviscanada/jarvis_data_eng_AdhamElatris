@@ -77,7 +77,6 @@ public class StockQuoteController {
     String ticker = scanner.nextLine().toUpperCase();
 
     try {
-      // Assuming the service returns an Optional<Quote>
       Optional<Quote> quote = quoteService.getQuoteByTicker(ticker);
       if (quote.isPresent()) {
         System.out.println("Quote found: " + quote.get());
@@ -97,7 +96,7 @@ public class StockQuoteController {
     try {
       int shares = Integer.parseInt(scanner.nextLine());
       positionService.buy(ticker, shares);
-      System.out.println("Successfully bought " + shares + " shares of " + ticker);
+      System.out.println("You have successfully bought " + shares + " shares of " + ticker + "...Congratulations!");
     } catch (NumberFormatException e) {
       System.out.println("Invalid input. Please enter a valid number of shares.");
     } catch (Exception e) {
@@ -109,12 +108,17 @@ public class StockQuoteController {
     System.out.print("Enter stock ticker to sell: ");
     String ticker = scanner.nextLine().toUpperCase();
     try {
-      positionService.sell(ticker);
-      System.out.println("Successfully sold all shares of " + ticker);
+      boolean success = positionService.sell(ticker);
+      if (success) {
+        System.out.println("Successfully sold all shares of " + ticker);
+      } else {
+        System.out.println("No shares found for ticker: " + ticker);
+      }
     } catch (Exception e) {
       System.out.println("Error processing sell order: " + e.getMessage());
     }
   }
+
 
   private void viewPortfolio() {
     System.out.println("\nYour Portfolio:");
