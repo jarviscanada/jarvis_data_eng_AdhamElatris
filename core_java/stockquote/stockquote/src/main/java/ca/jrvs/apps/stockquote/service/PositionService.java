@@ -35,6 +35,7 @@ public class PositionService {
 
     if (!dao.tickerExistsInQuoteTable(ticker)) {
       daoLogger.setLevel(originalLevel);
+      logger.error("\nSymbol not found in quote table");
       throw new IllegalArgumentException("Stock symbol does not exist in Quote table: " + ticker);
     }
 
@@ -46,13 +47,14 @@ public class PositionService {
       position = optionalPosition.get();
       position.setNumOfShares(position.getNumOfShares() + numberOfShares);
     } else {
-      logger.warn("\nNo existing position found for ticker: " + ticker + ", creating a new one.");
+      logger.info("\nNo existing position found for ticker: " + ticker + ", creating a new one.");
       position = new Position();
       position.setTicker(ticker);
       position.setNumOfShares(numberOfShares);
     }
 
     dao.save(position);
+
     Optional<Position> newPortfolio = dao.findById(ticker);
     daoLogger.setLevel(originalLevel); // Restore log level
     logger.info("\nYou have successfully bought " + numberOfShares + " shares of " + ticker);
@@ -66,33 +68,28 @@ public class PositionService {
    *
    * @param ticker
    */
-  public void sell(String ticker) {
+  public boolean sell(String ticker) {
     if (ticker == null || ticker.isBlank()) {
-      throw new IllegalArgumentException("\nInvalid ticker");
+      throw new IllegalArgumentException("Invalid ticker");
     }
-
-    // Suppress INFO logs
-    ch.qos.logback.classic.Logger daoLogger =
-        (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(PositionDao.class);
-    ch.qos.logback.classic.Level originalLevel = daoLogger.getLevel();
-    daoLogger.setLevel(ch.qos.logback.classic.Level.WARN); // Keep WARN/ERROR logs but suppress INFO
 
     Optional<Position> position = dao.findById(ticker);
     if (position.isPresent()) {
       dao.deleteById(ticker);
-      logger.info("\nSold stock " + ticker + " successfully !");
+      logger.info("\nSold stock " + ticker + " successfully!");
+      return true;
     } else {
-      logger.error("\nError selling " + ticker + " stock !");
+      logger.error("\nError selling " + ticker + " stock... Not found!");
+      return false;
     }
-    daoLogger.setLevel(originalLevel); // Restore log level
   }
+
 
   public Iterable<Position> getAllPositions() {
     return dao.findAll();
   }
 
   public Optional<Position> getPosition(String ticker) {
-    // You can add any additional business logic or validation here if needed.
     return dao.findById(ticker);
   }
 
