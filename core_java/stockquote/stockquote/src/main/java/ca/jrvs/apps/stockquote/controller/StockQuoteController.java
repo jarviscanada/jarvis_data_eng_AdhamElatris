@@ -133,10 +133,6 @@ public class StockQuoteController {
   private void addNewQuote() {
     System.out.print("Enter the new Quote ticker to add: ");
     String ticker = scanner.nextLine().toUpperCase();
-
-    if (!ticker.equals("")) {
-      System.out.println("Ticker can not be empty.");
-    }
     try {
       quoteService.addNewQuote(ticker);
       System.out.println("Successfully added new Quote: " + ticker);
