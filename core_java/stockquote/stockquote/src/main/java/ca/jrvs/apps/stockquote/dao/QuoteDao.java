@@ -53,10 +53,10 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
       stmt.executeUpdate();
 
-      logger.info("Quote: {} has been saved successfully!", quote.getTicker());
+      logger.info("\nQuote: {} has been saved successfully!", quote.getTicker());
       return quote;
     } catch (SQLException e) {
-      logger.error("Error saving quote: {}", quote.getTicker(), e);
+      logger.error("\nError saving quote: {}", quote.getTicker(), e);
       throw new IllegalArgumentException("Error saving quote", e);
     }
   }

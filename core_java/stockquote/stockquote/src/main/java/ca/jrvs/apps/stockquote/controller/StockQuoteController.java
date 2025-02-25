@@ -153,7 +153,7 @@ public class StockQuoteController {
       if (updatedQuote.isPresent()) {
         System.out.println("Successfully updated Quote: " + ticker);
       } else {
-        System.out.println("Error updating quote: No data found for symbol: " + ticker);
+        System.out.println("Error updating quote! No data found for ticker: " + ticker);
       }
     } catch (Exception e) {
       System.out.println("Error updating quote: " + e.getMessage());
