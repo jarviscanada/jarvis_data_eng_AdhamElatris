@@ -33,11 +33,34 @@ public class QuoteService {
       Optional<Quote> quote = Optional.ofNullable(httpHelper.fetchQuoteInfo(ticker));
       if (quote.isPresent()) {
         dao.save(quote.get());
-        //logger.info("\nFetched successfully !");
+        logger.info("\nFetched successfully !");
         return Optional.of(quote.get());
       }
     }
     logger.error("\nError fetching quote, make sure symbol is correct");
     return Optional.empty();
+  }
+
+  public void getAllQuotes() {
+    dao.findAll();
+  }
+
+  public void getQuoteByTicker(String ticker) {
+    if (ticker == null || ticker.isBlank()) {
+      logger.error("Invalid symbol");
+      throw new IllegalArgumentException("Invalid input");
+    } else {
+      dao.findById(ticker);
+    }
+  }
+
+  public void addNewQuote(String ticker) {
+    if (ticker == null || ticker.isBlank()) {
+      logger.error("Invalid symbol");
+      throw new IllegalArgumentException("Invalid input");
+    } else {
+      Quote quote = httpHelper.fetchQuoteInfo(ticker);
+      dao.save(quote);
+    }
   }
 }

@@ -1,40 +1,54 @@
 package ca.jrvs.apps.stockquote;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import ca.jrvs.apps.stockquote.controller.StockQuoteController;
+import ca.jrvs.apps.stockquote.dao.PositionDao;
+import ca.jrvs.apps.stockquote.dao.QuoteDao;
+import ca.jrvs.apps.stockquote.dao.QuoteHttpHelper;
+import ca.jrvs.apps.stockquote.service.PositionService;
+import ca.jrvs.apps.stockquote.service.QuoteService;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+import okhttp3.OkHttpClient;
 
 public class Main {
 
   public static void main(String[] args) {
-
-    String apiKey = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
-    String symbol = "MSFT";
-
-    HttpRequest request = HttpRequest.newBuilder()
-        .uri(URI.create(
-            "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
-                + "&datatype=json"))
-        .header("X-RapidAPI-Key", apiKey)
-        .header("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
-        .method("GET", HttpRequest.BodyPublishers.noBody())
-        .build();
-    try {
-      HttpResponse<String> response = HttpClient.newHttpClient()
-          .send(request, HttpResponse.BodyHandlers.ofString());
-      System.out.println(response.body());
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (JsonMappingException e) {
-      e.printStackTrace();
-    } catch (JsonProcessingException e) {
+    Map<String, String> properties = new HashMap<>();
+    try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/properties"))) {
+      String line;
+      while ((line = br.readLine()) != null) {
+        String[] tokens = line.split(":");
+        properties.put(tokens[0], tokens[1]);
+      }
+    } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+    try {
+      Class.forName(properties.get("db-class"));
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+    OkHttpClient client = new OkHttpClient();
+    String url = "jdbc:postgresql://"+properties.get("server")+":"+properties.get("port")+"/"+properties.get("database");
+    try (Connection c = DriverManager.getConnection(url, properties.get("username"), properties.get("password"))) {
+      QuoteDao qRepo = new QuoteDao(c);
+      PositionDao pRepo = new PositionDao(c);
+      QuoteHttpHelper rcon = new QuoteHttpHelper(properties.get("api-key"), client);
+      QuoteService sQuote = new QuoteService(qRepo, rcon);
+      PositionService sPos = new PositionService(pRepo);
+      StockQuoteController con = new StockQuoteController(sQuote, sPos);
+      con.initClient();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
   }
+
 }

@@ -43,8 +43,8 @@ public class Position {
   @Override
   public String toString() {
     return "\nPosition:" +
-        "\nticker='" + getTicker() + '\'' +
-        "\nnumOfShares=" + getNumOfShares() +
-        "\nvaluePaid=" + getValuePaid() + "\n";
+        "\nticker: '" + getTicker() + '\'' +
+        "\nYou number of shares: " + getNumOfShares() +
+        "\nThe value of your shares: " + getValuePaid() + "\n";
   }
 }

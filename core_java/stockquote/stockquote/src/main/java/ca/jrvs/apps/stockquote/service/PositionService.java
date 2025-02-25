@@ -1,8 +1,14 @@
 package ca.jrvs.apps.stockquote.service;
 
 import ca.jrvs.apps.stockquote.dao.PositionDao;
+import ca.jrvs.apps.stockquote.dao.QuoteDao;
+import ca.jrvs.apps.stockquote.dao.QuoteHttpHelper;
 import ca.jrvs.apps.stockquote.model.Position;
+import ca.jrvs.apps.stockquote.model.Quote;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Optional;
+import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,12 +28,12 @@ public class PositionService {
    * @param numberOfShares //* @param price
    * @return The position in our database after processing the buy
    */
-  public Position buy(String ticker, int numberOfShares /*, double price*/) {
+  public Position buy(String ticker, int numberOfShares) {
     if (ticker == null || ticker.isBlank() || numberOfShares <= 0) {
       throw new IllegalArgumentException("\nInvalid input");
     }
 
-    // Suppress INFO logs from PositionDao
+    // Suppress INFO logs
     ch.qos.logback.classic.Logger daoLogger =
         (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(PositionDao.class);
     ch.qos.logback.classic.Level originalLevel = daoLogger.getLevel();
@@ -71,7 +77,7 @@ public class PositionService {
       throw new IllegalArgumentException("\nInvalid ticker");
     }
 
-    // Suppress INFO logs from PositionDao
+    // Suppress INFO logs
     ch.qos.logback.classic.Logger daoLogger =
         (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(PositionDao.class);
     ch.qos.logback.classic.Level originalLevel = daoLogger.getLevel();
@@ -85,5 +91,13 @@ public class PositionService {
       logger.error("\nError selling " + ticker + " stock !");
     }
     daoLogger.setLevel(originalLevel); // Restore log level
+  }
+
+  public void getAllPositions() {
+    dao.findAll();
+  }
+
+  public void getPosition(String ticker) {
+    dao.findById(ticker);
   }
 }
