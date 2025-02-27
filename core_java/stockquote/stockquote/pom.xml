@@ -16,8 +16,35 @@
         <groupId>org.apache.maven.plugins</groupId>
         <version>2.22.0</version>
       </plugin>
+
+      <!-- Replace maven-jar-plugin with maven-assembly-plugin to create a fat JAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>ca.jrvs.apps.stockquote.Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+
   <dependencies>
     <dependency>
       <artifactId>jackson-databind</artifactId>
@@ -71,25 +98,17 @@
       <version>5.8.2</version>
     </dependency>
 
-    <dependency>
-      <artifactId>mockito-inline</artifactId>
-      <groupId>org.mockito</groupId>
-      <scope>test</scope>
-      <version>4.0.0</version>
-    </dependency>
-
   </dependencies>
+
   <groupId>ca.jrvs.apps.stockquote</groupId>
 
   <modelVersion>4.0.0</modelVersion>
-
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
 
   <version>1.0-SNAPSHOT</version>
 
