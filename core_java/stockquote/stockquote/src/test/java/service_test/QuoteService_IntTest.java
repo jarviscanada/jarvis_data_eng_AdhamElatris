@@ -3,6 +3,7 @@ package service_test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import ca.jrvs.apps.stockquote.dao.QuoteHttpHelper;
+import okhttp3.OkHttpClient;
 import org.junit.jupiter.api.*;
 import ca.jrvs.apps.stockquote.dao.QuoteDao;
 import ca.jrvs.apps.stockquote.model.Quote;
@@ -26,10 +27,12 @@ class QuoteService_IntTest {
     dataSource.setUser("postgres");
     dataSource.setPassword("password");
     connection = dataSource.getConnection();
+    OkHttpClient okHttpClient = new OkHttpClient();
+    String api = "1bad3f1958msh3c9487885639adcp13b034jsnfed42da3e913";
 
     QuoteDao quoteDao = new QuoteDao(connection);
     // Use the real HTTP helper (or a configured test version)
-    quoteService = new QuoteService(quoteDao, new QuoteHttpHelper());
+    quoteService = new QuoteService(quoteDao, new QuoteHttpHelper(api, okHttpClient));
   }
 
   @AfterEach

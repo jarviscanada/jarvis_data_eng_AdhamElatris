@@ -57,12 +57,14 @@ public class QuoteDao_Test {
     mockQuote.setTimestamp(new Timestamp(System.currentTimeMillis()));
 
     String sql =
-        "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent) "
-            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
-            + "ON CONFLICT (symbol) DO UPDATE SET "
-            + "open=EXCLUDED.open, high=EXCLUDED.high, low=EXCLUDED.low, price=EXCLUDED.price, "
-            + "volume=EXCLUDED.volume, latest_trading_day=EXCLUDED.latest_trading_day, "
-            + "previous_close=EXCLUDED.previous_close, change=EXCLUDED.change, change_percent=EXCLUDED.change_percent";
+        "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent, timestamp) "
+            +
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+            "ON CONFLICT (symbol) DO UPDATE SET " +
+            "open=EXCLUDED.open, high=EXCLUDED.high, low=EXCLUDED.low, price=EXCLUDED.price, " +
+            "volume=EXCLUDED.volume, latest_trading_day=EXCLUDED.latest_trading_day, " +
+            "previous_close=EXCLUDED.previous_close, change=EXCLUDED.change, " +
+            "change_percent=EXCLUDED.change_percent, timestamp=EXCLUDED.timestamp";
 
     // Mock the behavior of Connection and PreparedStatement
     when(mockConnection.prepareStatement(sql)).thenReturn(mockStmt);

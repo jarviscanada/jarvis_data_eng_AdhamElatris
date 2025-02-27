@@ -27,14 +27,13 @@
     </filter>
   </appender>
 
-  <!-- Logger for your application's package -->
+  <!-- Logger for application's package -->
   <logger name="ca.jrvs.apps.stockquote" level="INFO" additivity="false">
     <!-- Send all logs from this package to both appenders -->
     <appender-ref ref="FILE_INFO" />
     <appender-ref ref="FILE_ERROR" />
   </logger>
 
-  <!-- Optionally, you can configure the root logger if needed -->
   <root level="ERROR">
     <appender-ref ref="FILE_ERROR" />
   </root>
