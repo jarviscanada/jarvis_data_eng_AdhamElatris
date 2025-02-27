@@ -34,6 +34,7 @@
     <appender-ref ref="FILE_ERROR" />
   </logger>
 
+  <!-- Optionally, you can configure the root logger if needed -->
   <root level="ERROR">
     <appender-ref ref="FILE_ERROR" />
   </root>
