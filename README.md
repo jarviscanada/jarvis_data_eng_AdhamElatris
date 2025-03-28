@@ -8,7 +8,7 @@ Results-driven developer with deep expertise in both frontend and backend techno
 
 **Competent:** ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap
 
-**Familiar:** C++, Figma, Raspberry Pi, Regex, jQuery, React, Laravel
+**Familiar:** PySpark, Databricks, C++, Figma, Raspberry Pi, Regex, jQuery, React, Laravel
 
 ## Jarvis Projects
 

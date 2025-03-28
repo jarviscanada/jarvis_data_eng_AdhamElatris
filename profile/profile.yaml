@@ -39,6 +39,8 @@ skills:
     - Bootstrap
   # At least 5 skills
   familiar:
+    - PySpark
+    - Databricks
     - C++
     - Figma
     - Raspberry Pi

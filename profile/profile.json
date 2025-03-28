@@ -92,6 +92,8 @@
       "Bootstrap"
     ],
     "familiar": [
+      "PySpark",
+      "Databricks",
       "C++",
       "Figma",
       "Raspberry Pi",
