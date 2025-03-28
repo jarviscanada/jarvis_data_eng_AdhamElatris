@@ -25,9 +25,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 
 ## Highlighted Projects
-**Progression - A programming learning application**: Developed the comments feature for a coding education website used in multiple Quebec colleges, significantly improving communication between teachers and students. I used PHP Laravel, JavaScript, Vue.js and REST API
+**Progression - A programming learning application**: Developed the comments feature for a coding education website used in multiple Quebec colleges, significantly improving communication between teachers and students. I used PHP Laravel, JavaScript, Vue.js and REST API.
 
-**Matchez moi**: Led a team of four as SCRUM Master and developer for a dating website. The application won second-best of the semester and is showcased to incoming students. This project was built on Spring Boot, HTML (Thymeleaf), CSS and MariaDB database
+**Matchez moi**: Led a team of four as SCRUM Master and developer for a dating website. The application won second-best of the semester and is showcased to incoming students. This project was built on Spring Boot, HTML (Thymeleaf), CSS and MariaDB database.
 
 **Typing Speed Game** [[GitHub](https://github.com/aelatris/TypingGame)]: Developed a responsive typing game designed to help improve keyboard reactivity by testing users’ speed with random words. The game features customizable timers and difficulty settings, utilizing JavaScript, HTML, CSS, and a REST API.
 
