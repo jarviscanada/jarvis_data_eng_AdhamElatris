@@ -1,0 +1,187 @@
+2025-02-25 09:46:11 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote: Quote{
+ ticker: TSLA
+ open: 338.14
+ high: 342.4
+ low: 324.7
+ price: 330.53
+ volume: 75015540
+ latestTradingDay:2025-02-25
+ previousClose: 337.8
+ change: -7.27
+ changePercent: '-2.1522%'
+ timestamp: 2025-02-25 01:11:09.722
+}
+2025-02-25 09:46:11 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote: Quote{
+ ticker: NVDA
+ open: 136.56
+ high: 138.59
+ low: 130.08
+ price: 130.28
+ volume: 251381137
+ latestTradingDay:2025-02-25
+ previousClose: 134.43
+ change: -4.15
+ changePercent: '-3.0871%'
+ timestamp: 2025-02-25 01:11:52.121
+}
+2025-02-25 09:46:11 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 09:46:11 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote: Quote{
+ ticker: GOOGL
+ open: 181.99
+ high: 183.12
+ low: 178.89
+ price: 179.25
+ volume: 29854206
+ latestTradingDay:2025-02-25
+ previousClose: 179.66
+ change: -0.41
+ changePercent: '-0.2282%'
+ timestamp: 2025-02-25 01:15:38.241
+}
+2025-02-25 09:46:11 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote: Quote{
+ ticker: NFLX
+ open: 1008.0
+ high: 1015.17
+ low: 984.48
+ price: 988.47
+ volume: 4426227
+ latestTradingDay:2025-02-25
+ previousClose: 1003.15
+ change: -14.68
+ changePercent: '-1.4634%'
+ timestamp: 2025-02-25 01:16:05.785
+}
+2025-02-25 09:46:11 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote: Quote{
+ ticker: AAPL
+ open: 244.93
+ high: 248.86
+ low: 244.42
+ price: 247.1
+ volume: 51326396
+ latestTradingDay:2025-02-25
+ previousClose: 245.55
+ change: 1.55
+ changePercent: '0.6312%'
+ timestamp: 2025-02-25 01:28:35.148
+}
+2025-02-25 09:48:42 [main] INFO  c.j.a.s.service.PositionService - 
+You have successfully bought 1 shares of NFLX
+2025-02-25 09:48:42 [main] INFO  c.j.a.s.service.PositionService - 
+New updated portfolio: Optional[
+Position:
+ticker: 'NFLX'
+Your number of shares: 1
+The value of your shares: 988.47
+]
+2025-02-25 09:53:15 [main] INFO  c.j.apps.stockquote.dao.PositionDao - Position: 
+Position:
+ticker: 'GOOGL'
+Your number of shares: 100
+The value of your shares: 17966.0
+
+2025-02-25 09:53:15 [main] INFO  c.j.apps.stockquote.dao.PositionDao - Position: 
+Position:
+ticker: 'AAPL'
+Your number of shares: 100
+The value of your shares: 24555.0
+
+2025-02-25 09:53:15 [main] INFO  c.j.apps.stockquote.dao.PositionDao - Position: 
+Position:
+ticker: 'NVDA'
+Your number of shares: 10
+The value of your shares: 1302.8
+
+2025-02-25 09:53:15 [main] INFO  c.j.apps.stockquote.dao.PositionDao - Position: 
+Position:
+ticker: 'NFLX'
+Your number of shares: 1
+The value of your shares: 988.47
+
+2025-02-25 09:53:55 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'NVDA'
+Your number of shares: 10
+The value of your shares: 1302.8
+
+2025-02-25 10:33:09 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote found: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 10:39:19 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote found: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 10:39:56 [main] INFO  ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote found: Quote{
+ ticker: MSFT
+ open: 408.51
+ high: 409.37
+ low: 399.32
+ price: 404.0
+ volume: 26443656
+ latestTradingDay:2025-02-25
+ previousClose: 408.21
+ change: -4.21
+ changePercent: '-1.0313%'
+ timestamp: 2025-02-25 01:15:12.513
+}
+2025-02-25 11:04:00 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'NVDA'
+Your number of shares: 10
+The value of your shares: 1302.8
+
+2025-02-25 11:04:33 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'AAPL'
+Your number of shares: 100
+The value of your shares: 24555.0
+
+2025-02-25 11:17:21 [main] INFO  c.j.apps.stockquote.dao.PositionDao - 
+Position found ! 
+Position:
+ticker: 'NFLX'
+Your number of shares: 1
+The value of your shares: 988.47
+
