@@ -6,7 +6,7 @@ Results-driven developer with deep expertise in both frontend and backend techno
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, Python, HTML, CSS, C#, Kotlin, Spring Boot, Docker, Rest API, Test-driven development
 
-**Competent:** PySpark, Databricks, Spark, ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap
+**Competent:** ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap, PySpark, Databricks, Spark
 
 **Familiar:** C++, Figma, Raspberry Pi, Regex, jQuery, React, Laravel
 
@@ -24,9 +24,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
   - Stock Quote App: Implemented a Stock Quote App, built with Java and a PostgreSQL database, that integrates with the Alpha Vantage API to fetch real-time stock data. It uses OkHttpClient for efficient HTTP requests and Jackson for quick JSON deserialization. Designed with a robust architecture, the app ensures smooth and reliable data management, making it a powerful tool for tracking, practicing, and managing stock investments in a real-world-like environment, without any risks.
 
-**PySpark Fundamentals** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/core_java)]: In this project, I learned the fundamentals of PySpark and applied them through hands-on implementation. The focus was on building ETL pipelines using Spark DataFrames within the Databricks environment. The project involved reading data from multiple sources, applying transformations, and preparing it for downstream use. It demonstrates practical data processing workflows using PySpark, with an emphasis on efficient querying and manipulation at scale.
+**PySpark Fundamentals** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/spark_fundamentals)]: In this project, I learned the fundamentals of PySpark and applied them through hands-on implementation. The focus was on building ETL pipelines using Spark DataFrames within the Databricks environment. The project involved reading data from multiple sources, applying transformations, and preparing it for downstream use. It demonstrates practical data processing workflows using PySpark, with an emphasis on efficient querying and manipulation at scale.
 
-**Spark Advanced** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/core_java)]: I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.
+**Spark Advanced** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/spark_advanced)]: I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.
 
 
 ## Highlighted Projects

@@ -29,9 +29,6 @@ skills:
     - Test-driven development
   # At least 5 skills
   competent:     
-    - PySpark
-    - Databricks 
-    - Spark  
     - ASP.net
     - Vue.js
     - PHP
@@ -40,6 +37,9 @@ skills:
     - Angular
     - Flutter
     - Bootstrap
+    - PySpark
+    - Databricks 
+    - Spark 
   # At least 5 skills
   familiar:
     - C++
@@ -69,11 +69,11 @@ jarvis_projects:
       - "Stock Quote App: Implemented a Stock Quote App, built with Java and a PostgreSQL database, that integrates with the Alpha Vantage API to fetch real-time stock data. It uses OkHttpClient for efficient HTTP requests and Jackson for quick JSON deserialization. Designed with a robust architecture, the app ensures smooth and reliable data management, making it a powerful tool for tracking, practicing, and managing stock investments in a real-world-like environment, without any risks."
 
   - name: "PySpark Fundamentals"
-    git_url: "/core_java"
+    git_url: "/spark_fundamentals"
     description: In this project, I learned the fundamentals of PySpark and applied them through hands-on implementation. The focus was on building ETL pipelines using Spark DataFrames within the Databricks environment. The project involved reading data from multiple sources, applying transformations, and preparing it for downstream use. It demonstrates practical data processing workflows using PySpark, with an emphasis on efficient querying and manipulation at scale.
 
   - name: "Spark Advanced"
-    git_url: "/core_java"
+    git_url: "/spark_advanced"
     description: I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.  
 # List of personal or academic projects
 # Feel free to add more projects

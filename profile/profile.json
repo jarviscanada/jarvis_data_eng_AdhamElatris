@@ -51,12 +51,12 @@
     },
     {
       "description": "In this project, I learned the fundamentals of PySpark and applied them through hands-on implementation. The focus was on building ETL pipelines using Spark DataFrames within the Databricks environment. The project involved reading data from multiple sources, applying transformations, and preparing it for downstream use. It demonstrates practical data processing workflows using PySpark, with an emphasis on efficient querying and manipulation at scale.",
-      "git_url": "/core_java",
+      "git_url": "/spark_fundamentals",
       "name": "PySpark Fundamentals"
     },
     {
       "description": "I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.",
-      "git_url": "/core_java",
+      "git_url": "/spark_advanced",
       "name": "Spark Advanced"
     }
   ],
@@ -93,9 +93,6 @@
   ],
   "skills": {
     "competent": [
-      "PySpark",
-      "Databricks",
-      "Spark",
       "ASP.net",
       "Vue.js",
       "PHP",
@@ -103,7 +100,10 @@
       "Django",
       "Angular",
       "Flutter",
-      "Bootstrap"
+      "Bootstrap",
+      "PySpark",
+      "Databricks",
+      "Spark"
     ],
     "familiar": [
       "C++",
