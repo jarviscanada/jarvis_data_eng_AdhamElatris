@@ -6,9 +6,9 @@ Results-driven developer with deep expertise in both frontend and backend techno
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, Python, HTML, CSS, C#, Kotlin, Spring Boot, Docker, Rest API, Test-driven development
 
-**Competent:** ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap
+**Competent:** PySpark, Databricks, Spark, ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap
 
-**Familiar:** PySpark, Databricks, C++, Figma, Raspberry Pi, Regex, jQuery, React, Laravel
+**Familiar:** C++, Figma, Raspberry Pi, Regex, jQuery, React, Laravel
 
 ## Jarvis Projects
 
@@ -19,9 +19,14 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/core_java)]:
       
+  - JDBC App: Developed a Java application leveraging JDBC to perform CRUD operations on a PostgreSQL database. Designed DAOs for modular and efficient data access, used Maven for dependency and build management, and employed Docker to simplify setup and deployment. Performed comprehensive testing to ensure transaction accuracy, stability, and reliability.
   - Grep App: Developed a fast and efficient tool for searching text in large files. Built with Java, it leverages functional programming principles to make the code more modular, readable, and maintainable. It uses regular expressions (Regex) for powerful pattern matching and applies streams and lambda expressions to process data efficiently. This makes it a great tool for anyone needing to search through text with precision and speed.
 
   - Stock Quote App: Implemented a Stock Quote App, built with Java and a PostgreSQL database, that integrates with the Alpha Vantage API to fetch real-time stock data. It uses OkHttpClient for efficient HTTP requests and Jackson for quick JSON deserialization. Designed with a robust architecture, the app ensures smooth and reliable data management, making it a powerful tool for tracking, practicing, and managing stock investments in a real-world-like environment, without any risks.
+
+**PySpark Fundamentals** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/core_java)]: In this project, I learned the fundamentals of PySpark and applied them through hands-on implementation. The focus was on building ETL pipelines using Spark DataFrames within the Databricks environment. The project involved reading data from multiple sources, applying transformations, and preparing it for downstream use. It demonstrates practical data processing workflows using PySpark, with an emphasis on efficient querying and manipulation at scale.
+
+**Spark Advanced** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/core_java)]: I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.
 
 
 ## Highlighted Projects
