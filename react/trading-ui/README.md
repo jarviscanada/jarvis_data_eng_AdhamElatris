@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Introduction
+This project is a trading application built with React. It includes a Dashboard page that displays user (trader) profiles and a Quotes page that shows daily stock data. The stock quotes are fetched live from the Alpha Vantage public API, ensuring the data is always current and reliable.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app uses Axios for API requests and Node.js for building and running the project in a development environment. Git was used throughout the project for version control and to keep track of changes during development.
 
-## Available Scripts
+The layout and components are styled using Ant Design, a popular React UI library that provides ready-to-use and responsive components like tables, forms, and buttons. This helped speed up development and keep the design consistent across pages.
 
-In the project directory, you can run:
+Overall, this project demonstrates how to create a simple and functional trading interface with real-time data and a clean UI using modern web development tools.
 
-### `npm start`
+# Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### 1. Clone the Repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    git clone https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris.git
 
-### `npm test`
+    and go to the React folder
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 2. Install Dependencies
+Make sure you have Node.js and npm installed.
 
-### `npm run build`
+    npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 3. Start the app using Node.js (Option 1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 4. Start the app using Docker (Option 2)
 
-### `npm run eject`
+    docker-compose up --build
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    The app will be available here:  http://localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Implemenation
+The trading application is built using React for the frontend, with component-based architecture to maintain a modular and scalable structure. The UI leverages Ant Design for a modern and responsive user interface.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Key components include:
 
-## Learn More
+- NavBar: For navigation across pages.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- TraderItem: Represents individual trader data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- TraderList: Displays all traders in a tabular format.
 
-### Code Splitting
+- Dashboard: The homepage showing user/trader information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- QuotesPage: Fetches and displays real-time stock quotes.
 
-### Analyzing the Bundle Size
+Real-time stock data is retrieved from the Alpha Vantage API using Axios. The API integration is handled inside the QuotePage component, which sends HTTP requests to fetch daily quotes for stocks like AAPL, TSLA, and GOOGL.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The project is containerized using Docker, making it easy to set up and run in any environment. The React app is served using a lightweight Node.js HTTP server inside the Docker container.
 
-### Making a Progressive Web App
+Version control and collaboration were managed with Git, ensuring consistent development and easy rollback.
+## Architecture
+![alt text](image.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Test
+The application was tested manually, with each component undergoing multiple rounds of testing to ensure stability and eliminate potential bugs.
 
-### Advanced Configuration
+# Deployment
+The application's codebase was version-controlled using Git. A fully functional version of the app was containerized and deployed using Docker, ensuring consistent and reliable execution across different environments.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Improvements
+- handle Quote adding/removing etc.
+- Adding a database for users and users activity
+- Integrate an Alpha Vantage subscription key to increase API rate limits and ensure more reliable, real-time data access without interruptions.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
