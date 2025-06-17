@@ -4,7 +4,7 @@ import NavBar from '../../component/NavBar/NavBar';
 import { Table, Spin } from 'antd';
 import './QuotePage.scss';
 
-const API_KEY = 'BKBZUGNUCFSX9D7X'; // Replace with your actual key
+const API_KEY = 'BKBZUGNUCFSX9D7X';
 const TICKERS = ['AAPL', 'TSLA', 'GOOGL'];
 
 function QuotePage() {
@@ -32,9 +32,9 @@ function QuotePage() {
         ticker: symbol,
         lastPrice: parseFloat(latestData['4. close']),
         bidPrice: parseFloat(latestData['1. open']),
-        bidSize: parseFloat(latestData['2. high']), // simulated
+        bidSize: parseFloat(latestData['2. high']), 
         askPrice: parseFloat(latestData['3. low']),
-        askSize: Math.floor(Math.random() * 100000000), // simulated
+        askSize: Math.floor(Math.random() * 100000000), 
       };
     } catch (err) {
       console.error(`Error fetching ${symbol}:`, err);
