@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TraderListService } from '../trader-list.service';
 import { Trader } from '../trader';
+import { MatDialog } from '@angular/material/dialog';
+import { TraderFormComponent } from '../trader-form/trader-form.component';
 
 @Component({
   selector: 'app-trader-list',
@@ -11,7 +13,10 @@ export class TraderListComponent implements OnInit {
   traderList: Trader[] = [];
   displayedColumns: string[] = ['firstName', 'lastName', 'email', 'dob', 'country', 'actions'];
 
-  constructor(private traderListService: TraderListService) {}
+  constructor(
+    private traderListService: TraderListService,
+    private dialog: MatDialog  
+  ) {}
 
   ngOnInit(): void {
     this.traderListService.getDataSource().subscribe(data => this.traderList = data);
@@ -23,6 +28,27 @@ export class TraderListComponent implements OnInit {
   }
 
   openAddTraderDialog(): void {
-    // Implement modal dialog to add trader here (Angular Material Dialog)
+    const dialogRef = this.dialog.open(TraderFormComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(newTraderData => {
+      if (newTraderData) {
+        const newTrader: Trader = {
+          key: Date.now().toString(),
+          id: Date.now(),
+          firstName: newTraderData.firstName,
+          lastName: newTraderData.lastName,
+          email: newTraderData.email,
+          dob: newTraderData.dateOfBirth,
+          country: newTraderData.country,
+          amount: 0,
+          
+        };
+
+        this.traderListService.addTrader(newTrader);
+        this.traderList = [...this.traderList];
+      }
+    });
   }
 }

@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Trader } from './trader';
-import { of, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TraderListService {
+  private traderList: Trader[] = [];
 
-  traderList: Trader[] = [
-    {
-      key: '1', id: 1, firstName: 'Mike', lastName: 'Spencer', dob: new Date().toLocaleDateString(),
-      country: 'Canada', email: 'mike@test.com', amount: 0,
-      actions: `<button (click)="deleteTrader">Delete Trader</button>`
-    },
-    {
-      key: '2', id: 2, firstName: 'Hellen', lastName: 'Miller', dob: new Date().toLocaleDateString(),
-      country: 'Austria', email: 'hellen@test.com', amount: 0,
-      actions: `<button (click)="deleteTrader">Delete Trader</button>`
-    }
-  ];
+  private traderListSubject = new BehaviorSubject<Trader[]>([]);
 
-  constructor() { }
+  private dataUrl = 'assets/traders-list-data.json';  // path to your JSON file
+
+  constructor(private http: HttpClient) {
+    this.loadInitialData();
+  }
+
+  private loadInitialData(): void {
+    this.http.get<Trader[]>(this.dataUrl).subscribe(data => {
+      this.traderList = data;
+      this.traderListSubject.next(this.traderList);
+    });
+  }
 
   getDataSource(): Observable<Trader[]> {
-    // Return your Trader list data as an observable here
-    return of(this.traderList);
+    return this.traderListSubject.asObservable();
   }
 
   getColumns(): string[] {
@@ -32,7 +33,12 @@ export class TraderListService {
   }
 
   deleteTrader(key: string): void {
-  this.traderList = this.traderList.filter(trader => trader.key !== key);
-}
+    this.traderList = this.traderList.filter(trader => trader.key !== key);
+    this.traderListSubject.next(this.traderList);
+  }
 
+  addTrader(trader: Trader): void {
+    this.traderList.push(trader);
+    this.traderListSubject.next(this.traderList);
+  }
 }

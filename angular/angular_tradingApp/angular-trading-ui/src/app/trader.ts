@@ -1,5 +1,5 @@
 export interface Trader {
-  key: string;            // your unique string key
+  key: string;
   id: number;
   firstName: string;
   lastName: string;
@@ -7,5 +7,4 @@ export interface Trader {
   country: string;
   email: string;
   amount: number;
-  actions: string;        // since you store HTML string for buttons here
 }
