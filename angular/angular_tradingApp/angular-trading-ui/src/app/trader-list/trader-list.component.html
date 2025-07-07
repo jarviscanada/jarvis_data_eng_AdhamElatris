@@ -45,6 +45,10 @@
         <button mat-icon-button color="warn" (click)="deleteTrader(trader)">
           <mat-icon>delete</mat-icon>
         </button>
+        <button mat-icon-button color="primary" [routerLink]="['/trader-account', trader.id]">
+  <mat-icon>info</mat-icon>
+</button>
+
       </td>
     </ng-container>
 

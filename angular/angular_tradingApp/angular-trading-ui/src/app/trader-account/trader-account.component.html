@@ -1,0 +1,10 @@
+<div *ngIf="trader">
+  <h2>{{ trader.firstName }} {{ trader.lastName }}'s Account</h2>
+  <p><strong>Email:</strong> {{ trader.email }}</p>
+  <p><strong>DOB:</strong> {{ trader.dob }}</p>
+  <p><strong>Country:</strong> {{ trader.country }}</p>
+  <p><strong>Funds:</strong> ${{ trader.amount }}</p>
+
+  <button mat-raised-button color="primary" (click)="openDepositDialog()">Deposit Funds</button>
+  <button mat-raised-button color="accent" (click)="openWithdrawDialog()">Withdraw Funds</button>
+</div>

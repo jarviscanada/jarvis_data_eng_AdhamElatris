@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';                
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Angular Material modules used in the form
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';     
@@ -19,6 +18,8 @@ import { TraderFormComponent } from './trader-form/trader-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { TraderAccountComponent } from './trader-account/trader-account.component';
+import { FundDialogComponent } from './fund-dialog/fund-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     NavbarComponent,
     TraderListComponent,
-    TraderFormComponent
+    TraderFormComponent,
+    TraderAccountComponent,
+    FundDialogComponent
   ],
   imports: [
     BrowserModule,
