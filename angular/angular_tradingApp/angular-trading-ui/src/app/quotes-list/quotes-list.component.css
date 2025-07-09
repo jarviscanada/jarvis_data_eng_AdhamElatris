@@ -1,0 +1,32 @@
+.quotes-container {
+  padding: 40px;
+  margin-left: 100px;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #1a1a1a;
+}
+
+.quotes-table {
+  background-color: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: #333;
+}
+
+.mat-cell {
+  color: #444;
+}

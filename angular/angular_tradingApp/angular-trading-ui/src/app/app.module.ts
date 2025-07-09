@@ -20,6 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { TraderAccountComponent } from './trader-account/trader-account.component';
 import { FundDialogComponent } from './fund-dialog/fund-dialog.component';
+import { QuotesListComponent } from './quotes-list/quotes-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FundDialogComponent } from './fund-dialog/fund-dialog.component';
     TraderListComponent,
     TraderFormComponent,
     TraderAccountComponent,
-    FundDialogComponent
+    FundDialogComponent,
+    QuotesListComponent
   ],
   imports: [
     BrowserModule,
