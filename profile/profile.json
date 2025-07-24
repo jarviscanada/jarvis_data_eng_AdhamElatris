@@ -58,6 +58,21 @@
       "description": "I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.",
       "git_url": "/spark_advanced",
       "name": "Spark Advanced"
+    },
+    {
+      "description": "I developed a React-based trading dashboard that allows users to view, add, and manage trader accounts, as well as track daily stock quotes for companies like AAPL, TSLA, and GOOGL. The application features a responsive UI built with Ant Design and Font Awesome, and communicates with backend APIs using Axios. The Quotes page integrates with the Alpha Vantage API to fetch real-time stock data, displaying it in a structured table format. The project emphasizes modular design, efficient state management, and seamless user interaction, making it a solid foundation for a real-time trading interface.",
+      "git_url": "/react",
+      "name": "React trading application"
+    },
+    {
+      "description": "I built a trading dashboard using Angular 12 that allows users to view, add, and manage trader accounts, as well as perform deposit and withdrawal operations through modal dialogs. The UI is designed with Angular Material for a responsive and clean layout. A dedicated Quotes page integrates with the Alpha Vantage API to fetch and display real-time daily stock quotes for companies like AAPL, TSLA, and GOOGL in a structured table format. The project emphasizes modular architecture, service-based API communication, and a consistent, intuitive user experience across components.",
+      "git_url": "/angular",
+      "name": "Angular trading application"
+    },
+    {
+      "description": "Developed a student registration system using COBOL on the mainframe, implementing key functionality for managing student records including data insertion, updates, deletions, and queries. Utilized VSAM files for efficient indexed data storage and converted sequential datasets into VSAM format. Designed modular programs to handle complex queries by student ID and inclusion date, as well as generate detailed reports grouped by course. Demonstrated strong proficiency in COBOL fundamentals such as file handling, procedural programming, and data validation within an enterprise batch processing environment.",
+      "git_url": "/mainframe_cobol",
+      "name": "Mainframe Systems Development - COBOL"
     }
   ],
   "name": "Adham Elatris",
@@ -103,7 +118,8 @@
       "Bootstrap",
       "PySpark",
       "Databricks",
-      "Spark"
+      "Spark",
+      "COBOL"
     ],
     "familiar": [
       "C++",

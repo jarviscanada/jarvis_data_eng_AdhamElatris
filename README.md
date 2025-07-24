@@ -6,7 +6,7 @@ Results-driven developer with deep expertise in both frontend and backend techno
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, Python, HTML, CSS, C#, Kotlin, Spring Boot, Docker, Rest API, Test-driven development
 
-**Competent:** ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap, PySpark, Databricks, Spark
+**Competent:** ASP.net, Vue.js, PHP, Unity game development, Django, Angular, Flutter, Bootstrap, PySpark, Databricks, Spark, COBOL
 
 **Familiar:** C++, Figma, Raspberry Pi, Regex, jQuery, React, Laravel
 
@@ -27,6 +27,12 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AdhamElatr
 **PySpark Fundamentals** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/spark_fundamentals)]: In this project, I learned the fundamentals of PySpark and applied them through hands-on implementation. The focus was on building ETL pipelines using Spark DataFrames within the Databricks environment. The project involved reading data from multiple sources, applying transformations, and preparing it for downstream use. It demonstrates practical data processing workflows using PySpark, with an emphasis on efficient querying and manipulation at scale.
 
 **Spark Advanced** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/spark_advanced)]: I implemented a retail data pipeline using PySpark to process and transform data from a CSV file. The project involved data cleaning, aggregation, and business analysis tasks such as invoice trends, monthly growth, active users, and RFM segmentation. Final insights were visualized with Matplotlib, demonstrating practical big data processing and analytics. This project deepened my understanding of Spark’s capabilities and real-world applications.
+
+**React trading application** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/react)]: I developed a React-based trading dashboard that allows users to view, add, and manage trader accounts, as well as track daily stock quotes for companies like AAPL, TSLA, and GOOGL. The application features a responsive UI built with Ant Design and Font Awesome, and communicates with backend APIs using Axios. The Quotes page integrates with the Alpha Vantage API to fetch real-time stock data, displaying it in a structured table format. The project emphasizes modular design, efficient state management, and seamless user interaction, making it a solid foundation for a real-time trading interface.
+
+**Angular trading application** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/angular)]: I built a trading dashboard using Angular 12 that allows users to view, add, and manage trader accounts, as well as perform deposit and withdrawal operations through modal dialogs. The UI is designed with Angular Material for a responsive and clean layout. A dedicated Quotes page integrates with the Alpha Vantage API to fetch and display real-time daily stock quotes for companies like AAPL, TSLA, and GOOGL in a structured table format. The project emphasizes modular architecture, service-based API communication, and a consistent, intuitive user experience across components.
+
+**Mainframe Systems Development - COBOL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AdhamElatris/tree/master/mainframe_cobol)]: Developed a student registration system using COBOL on the mainframe, implementing key functionality for managing student records including data insertion, updates, deletions, and queries. Utilized VSAM files for efficient indexed data storage and converted sequential datasets into VSAM format. Designed modular programs to handle complex queries by student ID and inclusion date, as well as generate detailed reports grouped by course. Demonstrated strong proficiency in COBOL fundamentals such as file handling, procedural programming, and data validation within an enterprise batch processing environment.
 
 
 ## Highlighted Projects
