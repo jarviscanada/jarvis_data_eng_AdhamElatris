@@ -11,7 +11,7 @@ export class TraderListService {
 
   private traderListSubject = new BehaviorSubject<Trader[]>([]);
 
-  private dataUrl = 'assets/traders-list-data.json';  // path to your JSON file
+  private dataUrl = 'assets/traders-list-data.json';  
 
   constructor(private http: HttpClient) {
     this.loadInitialData();
