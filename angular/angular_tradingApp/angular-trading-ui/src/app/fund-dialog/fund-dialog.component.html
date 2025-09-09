@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{ data.action }} Funds</h2>
+
+<mat-form-field style="width: 100%;">
+  <mat-label>Amount</mat-label>
+  <input matInput type="number" [(ngModel)]="amount" min="1">
+</mat-form-field>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSubmit()" [disabled]="amount <= 0">Submit</button>
+</mat-dialog-actions>

@@ -1,0 +1,77 @@
+<h2 mat-dialog-title>Add New Trader</h2>
+
+<form #traderForm="ngForm" (ngSubmit)="onSubmit(traderForm)" novalidate>
+  <mat-form-field style="width: 100%;">
+    <mat-label>First Name</mat-label>
+    <input
+      matInput
+      name="firstName"
+      [(ngModel)]="trader.firstName"
+      required
+      #firstName="ngModel"
+    />
+    <mat-error *ngIf="firstName.errors?.['required'] && (firstName.touched || traderForm.submitted)">
+      First Name is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Last Name</mat-label>
+    <input
+      matInput
+      name="lastName"
+      [(ngModel)]="trader.lastName"
+      required
+      #lastName="ngModel"
+    />
+    <mat-error *ngIf="lastName.errors?.['required'] && (lastName.touched || traderForm.submitted)">
+      Last Name is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      type="email"
+      name="email"
+      [(ngModel)]="trader.email"
+      required
+      email
+      #email="ngModel"
+    />
+    <mat-error *ngIf="email.errors?.['required'] && (email.touched || traderForm.submitted)">
+      Email is required.
+    </mat-error>
+    <mat-error *ngIf="email.errors?.['email'] && (email.touched || traderForm.submitted)">
+      Please enter a valid email address.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Country</mat-label>
+    <input matInput name="country" [(ngModel)]="trader.country" />
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Date of Birth</mat-label>
+    <input
+      matInput
+      type="date"
+      name="dateOfBirth"
+      [(ngModel)]="trader.dateOfBirth"
+    />
+  </mat-form-field>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button
+      mat-button
+      color="primary"
+      type="submit"
+      [disabled]="!traderForm.form.valid"
+    >
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>

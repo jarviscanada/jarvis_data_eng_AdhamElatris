@@ -1,0 +1,16 @@
+2025-02-25 09:46:26 [main] ERROR ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote NOT found !
+2025-02-25 09:48:14 [main] ERROR c.j.apps.stockquote.dao.PositionDao - 
+Position NOT found !
+2025-02-25 09:48:42 [main] ERROR c.j.apps.stockquote.dao.PositionDao - 
+Position NOT found !
+2025-02-25 09:54:52 [main] ERROR c.j.apps.stockquote.dao.PositionDao - 
+Position NOT found !
+2025-02-25 10:40:12 [main] ERROR ca.jrvs.apps.stockquote.dao.QuoteDao - 
+Quote NOT found !
+2025-02-25 11:03:51 [main] ERROR c.j.apps.stockquote.dao.PositionDao - 
+Position NOT found !
+2025-02-25 11:04:26 [main] ERROR c.j.apps.stockquote.dao.PositionDao - 
+Position NOT found !
+2025-02-25 11:17:14 [main] ERROR c.j.apps.stockquote.dao.PositionDao - 
+Position NOT found !

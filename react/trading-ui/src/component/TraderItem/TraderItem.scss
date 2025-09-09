@@ -1,0 +1,21 @@
+.trader-item {
+  background: #f4f4f4;
+  padding: 10px 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: #c0392b;
+  }
+}
